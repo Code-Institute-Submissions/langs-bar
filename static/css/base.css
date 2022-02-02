@@ -4,7 +4,6 @@ html {
 }
 
 body {
-    /* background: url('/media/langs.jpeg') no-repeat center center fixed; */
     background-color: #030509;
     background-size: cover;
     height: calc(100vh - 164px);
@@ -18,13 +17,37 @@ nav {
 
 .nav-item {
     border: 1px solid #fff;
-    margin: 50px 5px;
+    margin: 15px 5px;
     text-align: center;
+}
+
+.nav-link {
+    transition: 0.7s;
+}
+
+.nav-link:hover {
+    transform: scale(1.2);
 }
 
 .logo-font {
     margin: auto;
     padding: 20px 20px;
+}
+
+#main-account {
+    background-color: #030509;
+}
+
+.account-link {
+    text-align: center;
+    list-style-type: none;
+    margin: 5px 5px;
+}
+
+/* -------------------------------- index Page */
+
+.langs-image {
+    background: url('/media/langs.jpeg') no-repeat center center fixed;
 }
 
 /* -------------------------------- Media Queries */

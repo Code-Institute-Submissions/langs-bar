@@ -2,8 +2,9 @@
 
 <!doctype html>
 <html lang="en">
+  <!-- Head -->
   <head>
-
+    <!-- Meta -->    
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
@@ -12,15 +13,16 @@
 
     {% block extra_meta %}
     {% endblock %}
-
+    <!-- Styling / CSS -->
     {% block corecss %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
-
+    <!-- JS Scripts -->
     {% block corejs %}
         <script src="https://kit.fontawesome.com/4863a75fd6.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -30,24 +32,28 @@
 
     {% block extra_js %}
     {% endblock %}
-
+    <!-- Site Title -->
     <title>Langs Bar {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
+    <!-- Header -->
     <header class="container-fluid fixed-top">
       <div class="row">
+        <!-- Accounts Nav -->
         {% include 'includes/account-nav.html' %}
+        <!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg navbar-light w-100">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             {% include 'includes/main-nav.html' %}
         </nav>
-    </div>
+        {% include 'includes/secondary-nav.html' %}
+      </div>
   </header>
-
+    <!-- Messages -->
     {% if messages %}
-        <div class="message-container"></div>
+        <div class="message-container flex"></div>
     {% endif %}
 
     {% block page_header %}
@@ -61,4 +67,11 @@
 
     
   </body>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center py-3">© 2022 Copyright: Langs Bar & Cocktail Lounge | Powered By: 
+    <a href="https://fullsnackwebdev.co.uk/" class="footer-link" target="_blank"> Full Snack Web Dev</a>
+  </div>
+</footer>
+<!-- Footer -->
 </html>

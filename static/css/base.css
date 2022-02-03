@@ -41,13 +41,38 @@ nav {
 .account-link {
     text-align: center;
     list-style-type: none;
-    margin: 5px 5px;
+    margin: 5px 10px;
+}
+
+.secondary-nav {
+    text-align: center;
+    list-style-type: none;
+    margin: 5px 10px;
+}
+
+/* -------------------------------- Footer */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: grey;
+    text-decoration: none;
 }
 
 /* -------------------------------- index Page */
 
 .langs-image {
-    background: url('/media/langs.jpeg') no-repeat center center fixed;
+    background: url('/media/langs.jpeg') no-repeat center center;
+    margin-top: 100px;
 }
 
 /* -------------------------------- Media Queries */

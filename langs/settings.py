@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'home',
     'vip',
     'phonenumber_field',
+    'menu',
 ]
 
 MIDDLEWARE = [

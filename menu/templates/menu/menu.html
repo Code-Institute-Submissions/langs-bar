@@ -7,7 +7,7 @@
 
 {% block content %}
 <div class="anyClass">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="30000">
         <div class="carousel-inner slider-div">
             {% for menu in menus %}
           <div class="carousel-item item{% if forloop.first %} active{% endif %}">
@@ -23,7 +23,29 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      
+      <div class="container info-menu">
+          <h2>
+              Info:
+          </h2>
+          <p>
+            DRY ICE INFO <br>
+            <br>
+            All our cocktails are made uniquely and some are also served with Dry Ice.
+            Dry Ice is safe when handled correctly, so if your drink is served with a straw please use it.
+            The Dry Ice in our Porn Star Martini cocktail can be found in the bottom of the glass and if
+            there is no straw, please allow time for the dry ice to dissappear and enjoy.
+            Please do not handle the dry ice with your hands, instead enjoy the experience.
+            If you wish not to have Dry Ice please let a memeber of staff know before ordering.
+            </p>
+            <p>
+            FOOD ALLERGY & INTOLERANCES <br>
+            <br>
+            We follow good hygiene practice in our kitchen however.
+            Due to the wide range of ingredients used in our kitchen there could be a possibility
+            of cross contamination by other ingredients.
+            Please make a member of staff aware of any dietry requirements before ordering.
+          </p>
+      </div>
 </div>
 
 

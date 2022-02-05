@@ -23,12 +23,10 @@ nav {
 
 .navbar-nav {
     background-color: #030509;
-    z-index: 999;
 }
 
 .navbar-expand {
     background-color: #030509;
-    z-index: 998;
 }
 
 .nav-item {

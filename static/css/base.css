@@ -65,10 +65,47 @@ nav {
     height: auto;
   }
 
+/* -------------------------------- VIP Page */
+.vip-h2 {
+    margin-bottom: 30px;
+}
+.anyClass {
+    height:700px;
+    overflow-y: scroll;
+    
+  }
+  .anyClass::-webkit-scrollbar {
+    width: 11px;
+  }
+  
+  .anyClass::-webkit-scrollbar-track {
+    background: white;
+  }
+  
+  .anyClass::-webkit-scrollbar-thumb {
+    background-color: #030509;
+    border-radius: 6px;
+    border: 3px solid white;
+  }
+
+  .vip-date-btn {
+      margin-bottom: 5px;
+      width: 300px;
+  }
+
+  .date-picker {
+      margin: 50px auto;
+      width: 100px;
+      text-align: center;
+  }
+
 /* -------------------------------- Media Queries */
 @media (min-width: 100px) {
     .langs-image {
         margin-top: 100px;
+    }
+    .vip-edit {
+        display: none;
     }
 }
 
@@ -80,6 +117,12 @@ nav {
     .footer {
         font-size: 1em;
     }
+    .vip-edit {
+        display: contents;
+    }
+    .img-vip {
+        margin: auto;
+    }
 }
 
 @media (min-width: 991px) {
@@ -87,5 +130,12 @@ nav {
 }
 
 @media (min-width: 1080px) {
-
+    .vip-text {
+        width: 75%;
+        text-align: center;
+        margin: auto;
+    }
+    .text-top {
+        margin-top: 50px;
+    }
 }

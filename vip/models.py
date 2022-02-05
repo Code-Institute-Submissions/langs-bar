@@ -18,8 +18,9 @@ class Booth(models.Model):
         choices=PARTY_SIZE,
         default=' '
     )
+    quantity = models.IntegerField()
     date = models.DateTimeField(null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
-        return f"{self.date} - {self.party_size} - {self.price}"
+        return f"{self.date} - {self.party_size} - {self.price} - {self.quantity}"

@@ -6,7 +6,7 @@ from .models import Booth
 
 class BoothAdmin(admin.ModelAdmin):
     """ Admin Display Fields """
-    list_display = ('date', 'party_size', 'price')
+    list_display = ('date', 'party_size', 'price', 'quantity')
 
 
 admin.site.register(Booth, BoothAdmin)

@@ -6,5 +6,39 @@
 {% endblock %}
 
 {% block content %}
-
+<div class="anyClass">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font vip-h2">VIP Booths</h2>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 vip-edit" responsive>
+            <img class="img-vip" src="/media/booth-party.png" alt="VIP Booth">
+        </div>
+        <div class="col-12 vip-text-div">
+            <p class="vip-text text-top">
+                1 Bottle of 70cl Spirit of your choice (from choices below), 2 Mixers (excluding bottled mixer), EXTRA MIXER £5 PER CARAFE
+            </p>
+            <p class="vip-text">
+                Grey Goose - Dead Mans Finger Spiceds - Gordons Pink Gin - Jack Daniels - Whitley Neil Rhubarb & Ginger
+            </p>
+            <p class="vip-text">
+                PLEASE CHECK OUR <a href="#">DRESS CODE</a> BEFORE ARRIVAL OTHER SPIRIT FLAVOURS AVAILABLE PLEASE CONTACT US A DAY BEFORE
+                ARRIVAL IF YOU WISH TO HAVE ALTERNATIVE FLAVOUR. ARRIVAL ON OR BEFORE 8PM TABLES WILL ONLY BE HELD 
+                FOR 15 MINUTES AFTER THIS TIME.
+            </p>
+        </div>
+        <div class="col-12 date-picker">
+            <p>Choose a date:</p>
+            {% for booth in booths %}
+            <button class="vip-date-btn btn btn-light" value="{{ booth.date }}" type="button">{{ booth.date }}</button>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
 {% endblock %}

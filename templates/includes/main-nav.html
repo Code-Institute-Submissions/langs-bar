@@ -1,30 +1,49 @@
-<div class="collapse navbar-collapse" id="main-nav">
-  <ul class="navbar-nav w-auto mx-auto">
-    <li {% if request.path != '' %} style="display: none;" {% endif %} class="nav-item">
-      <a {% if request.path != '' %} style="display: none;" {% endif %} class="logo-font font-weight-bold nav-link text-white" href="#" id="all-products-link">
-      Home
-      </a>
-    </li>
-  <ul class="navbar-nav w-auto mx-auto">
-     <li class="nav-item">
-        <a class="logo-font font-weight-bold nav-link text-white" href="#" id="evening">
-        Evening Table Booking's
-        </a>
-     </li>
-     <li class="nav-item">
-        <a class="logo-font font-weight-bold nav-link text-white" href="#" id="vip-booking">
-        VIP Booth Booking's
-        </a>
-     </li>
-     <li class="nav-item">
-        <a class="logo-font font-weight-bold nav-link text-white" href="#" id="brunch-link">
-        Brunch Events & Calendar
-        </a>
-     </li>
-     <li class="nav-item">
-        <a class="logo-font font-weight-bold nav-link text-white" href="#" id="contact-link">
-        Contact Us
-        </a>
-     </li>
-  </ul>
-</div>
+<nav class="navbar navbar-expand-lg navbar-dark">
+   <a class="navbar-brand" href="#"><i class="fas fa-home"></i></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNavDropdown">
+     <ul class="navbar-nav m-auto">
+       <li class="nav-item active">
+         <a class="nav-link text-white" href="#">Evening Tablet Booking's <span class="sr-only">(current)</span></a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link text-white" href="#">VIP Booth Booking's</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link text-white" href="#">Brunch & Event Calander</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link text-white" href="#">Menu's</a>
+       </li>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           About
+         </a>
+         <div class="dropdown-menu dark" aria-labelledby="navbarDropdownMenuLink">
+           <a class="dropdown-item text-white dark nav-link" href="#">Location</a>
+           <a class="dropdown-item text-white dark nav-link" href="#">Dress Codes</a>
+           <a class="dropdown-item text-white dark nav-link" href="#">Contact Us</a>
+         </div>
+       </li>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           My Account
+         </a>
+         <div class="dropdown-menu dark" aria-labelledby="navbarDropdownMenuLink">
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+           <a class="dropdown-item text-white dark nav-link" href="#">Admin</a>
+           {% endif %}
+           <a class="dropdown-item text-white dark nav-link" href="#">My Profile</a>
+           <a class="dropdown-item text-white dark nav-link" href="{% url 'account_logout' %}">Log Out</a>
+           {% else %}
+           <a class="dropdown-item text-white dark nav-link" href="{% url 'account_login' %}">Log In</a>
+           <a class="dropdown-item text-white dark nav-link" href="{% url 'account_login' %}">Register</a>
+           {% endif %}
+         </div>
+       </li>
+     </ul>
+   </div>
+ </nav>

@@ -5,6 +5,7 @@ from .models import Booth
 
 
 class BoothAdmin(admin.ModelAdmin):
+    """ Admin Display Fields """
     list_display = ('date', 'party_size', 'price')
 
 

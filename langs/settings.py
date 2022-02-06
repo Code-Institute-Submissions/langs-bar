@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'menu',
     'events',
+    'location',
 ]
 
 MIDDLEWARE = [

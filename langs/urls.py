@@ -26,4 +26,6 @@ urlpatterns = [
     path('menu/', include('menu.urls')),
     path('events/', include('events.urls')),
     path('location/', include('location.urls')),
+    path('dresscode/', include('dresscode.urls')),
+    path('contact/', include('contact.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

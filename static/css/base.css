@@ -93,6 +93,17 @@ nav {
 .hr-event {
     background-color: white;
 }
+a.category-badge > span.badge:hover {
+    background: white !important;
+    color: #030509 !important;
+}
+.events-home a {
+    color: white;
+    text-decoration: none;
+}
+.event-sort-selector {
+    text-align: right;
+}
 /* -------------------------------- Menus */
 .slider-div {
     margin-left: auto;

@@ -11,8 +11,16 @@
        <li class="nav-item">
          <a class="nav-link text-white" href="{% url 'vip' %}">VIP Booth Booking's</a>
        </li>
-       <li class="nav-item">
-         <a class="nav-link text-white" href="{% url 'events' %}">Brunch & Event Calander</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Brunch & Event Calander
+          </a>
+          <div class="dropdown-menu dark" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item text-white dark nav-link" href="{% url 'events' %}">All Events</a>
+            <a class="dropdown-item text-white dark nav-link" href="{% url 'events' %}?sort=price&direction=asc">By Price</a>
+            <a class="dropdown-item text-white dark nav-link" href="{% url 'events' %}?sort=rating&direction=desc">By Rating</a>
+            <a class="dropdown-item text-white dark nav-link" href="{% url 'events' %}?sort=month&direction=asc">By Month</a>
+          </div>
        </li>
        <li class="nav-item">
          <a class="nav-link text-white" href="{% url 'menu' %}">Menu's</a>

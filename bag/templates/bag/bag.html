@@ -7,6 +7,42 @@
 
 {% block content %}
 <div class="anyClass">
+    <div class="container mb-2">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Cart</h2>
+                <hr>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col">
+                {% if bag_items %}
+                    <div class="table-responsive rounded">
+                        <table class="table table-sm table-borderless">
+                            <thead class="text-black">
+                                <tr>
+                                    <th scope="col">Event</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Subtotal</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    {% else %}
+                    <p class="lead mb-5">Your bag is empty.</p>
+                    <a href="{% url 'events' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left text-white"></i>
+                        </span>
+                        <span class="text-uppercase text-white">Back to Events</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

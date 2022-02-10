@@ -28,4 +28,5 @@ urlpatterns = [
     path('location/', include('location.urls')),
     path('dresscode/', include('dresscode.urls')),
     path('contact/', include('contact.urls')),
+    path('bag/', include('bag.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

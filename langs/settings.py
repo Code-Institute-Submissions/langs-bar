@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'location',
     'dresscode',
     'contact',
+    'bag',
 ]
 
 MIDDLEWARE = [

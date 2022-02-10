@@ -34,6 +34,10 @@ nav {
 .fa-home {
     font-size: 2em;
 }
+.fa-shopping-bag, .bag-price {
+    color: white;
+}
+
 /* -------------------------------- Footer */
 .footer {
     position: absolute;
@@ -103,6 +107,26 @@ a.category-badge > span.badge:hover {
 }
 .event-sort-selector {
     text-align: right;
+}
+.fa-minus, .fa-plus {
+    color: white !important;
+}
+.decrement-qty, .increment-qty {
+    border: 1px solid white;
+}
+.qty_input {
+    max-width: 60px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+}
+.quantity-div {
+    margin-top: 50px;
+}
+.btn-invert:hover {
+    background: white !important;
+    color: #030509 !important;
 }
 /* -------------------------------- Menus */
 .slider-div {

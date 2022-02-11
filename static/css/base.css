@@ -1,13 +1,29 @@
 html {
     height: 100%;
     background-color: #030509;
+    color: white;
 }
 body {
     background-color: #030509;
     background-size: cover;
     height: calc(100vh);
-    color: white;
+    color: white !important;
     font-family: 'Quicksand';
+}
+.anyClass {
+    height:700px;
+    overflow-y: scroll;
+}
+.anyClass::-webkit-scrollbar {
+    width: 11px;
+}
+.anyClass::-webkit-scrollbar-track {
+    background: white;
+}
+.anyClass::-webkit-scrollbar-thumb {
+    background-color: #030509;
+    border-radius: 6px;
+    border: 3px solid white;
 }
 .text-black {
     color: black !important;
@@ -64,21 +80,6 @@ nav {
 /* -------------------------------- VIP Page */
 .vip-h2 {
     margin-bottom: 30px;
-}
-.anyClass {
-    height:700px;
-    overflow-y: scroll;
-}
-.anyClass::-webkit-scrollbar {
-    width: 11px;
-}
-.anyClass::-webkit-scrollbar-track {
-    background: white;
-}
-.anyClass::-webkit-scrollbar-thumb {
-    background-color: #030509;
-    border-radius: 6px;
-    border: 3px solid white;
 }
 .vip-date-btn {
     margin-bottom: 5px;

@@ -28,7 +28,7 @@
                   </tr>
                </thead>
                {% for item in bag_items %}
-               <tr>
+               <tr class="bag-table">
                   <td class="p-3 w-25">
                      <img class="img-fluid rounded" src="{{ item.event.image.url }}">
                   </td>
@@ -52,7 +52,7 @@
                                  </span>
                                  </button>
                               </div>
-                              <input class="form-control form-control-sm qty_input" type="number"
+                              <input readonly class="form-control form-control-sm qty_input" type="number"
                                  name="quantity" value="{{ item.quantity }}" min="1" max="{{item.event.quantity}}"
                                  data-item_id="{{ item.item_id }}"
                                  id="id_qty_{{ item.item_id }}">

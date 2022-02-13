@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404
+)
 from django.contrib import messages
 from events.models import Event
 
@@ -14,7 +16,7 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified event to the shopping bag """
 
-    event = Event.objects.get(pk=item_id)
+    event = get_object_or_404(Event, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
 
@@ -39,8 +41,10 @@ def adjust_bag(request, item_id):
 
     if quantity > 0:
         bag[item_id] = quantity
+        messages.success(request, f'Updated quantity in your bag.')
     else:
         bag.pop(item_id)
+        messages.success(request, f'Updated quantity in your bag.')
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
@@ -49,12 +53,16 @@ def adjust_bag(request, item_id):
 def remove_from_bag(request, item_id):
     """Remove the item from the shopping bag"""
 
+    event = get_object_or_404(Event, pk=item_id)
+
     try:
         bag = request.session.get('bag', {})
         bag.pop(item_id)
+        messages.success(request, f'Removed {event.name} from your bag.')
 
         request.session['bag'] = bag
         return HttpResponse(status=200)
 
     except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)

@@ -71,7 +71,6 @@ nav {
     height: 2px;
 }
 
-
 /* -------------------------------- Footer */
 .footer {
     position: absolute;
@@ -147,6 +146,11 @@ input[type=number]::-webkit-outer-spin-button {
     background: white !important;
     color: #030509 !important;
 }
+/* -------------------------------- Bag */
+.bag-table {
+    border-bottom: 1px solid white;
+}
+
 /* -------------------------------- Menus */
 .slider-div {
     margin-left: auto;

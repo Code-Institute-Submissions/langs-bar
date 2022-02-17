@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404
 from events.models import Event
 
+
 def bag_contents(request):
 
     bag_items = []
@@ -20,7 +21,7 @@ def bag_contents(request):
             })
         else:
             event = get_object_or_404(Event, pk=item_id)
-            for quantity in item_data.items():
+            for quantity in item_data['quantity'].items():
                 total += quantity * event.price
                 event_count += quantity
                 bag_items.append({

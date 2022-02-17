@@ -73,8 +73,7 @@ nav {
 
 /* -------------------------------- Footer */
 .footer {
-    position: absolute;
-    bottom: 0;
+    position: relative;
     width: 100%;
     height: 60px;
     font-size: 0.8em;
@@ -90,6 +89,13 @@ nav {
     text-decoration: none;
 }
 /* -------------------------------- index Page */
+.langs-image {
+    height: 82.5vh;
+}
+#langs-logo {
+    max-width: 100%;
+    margin-top: 25vh;
+}
 .responsive {
     max-width: 100%;
     height: auto;
@@ -160,11 +166,16 @@ input[type=number]::-webkit-outer-spin-button {
 .info-menu{
     margin-top: 100px;
 }
+/* -------------------------------- Menus */
+.container {
+    min-height: 82.5vh;
+}
 /* -------------------------------- Media Queries */
 @media (min-width: 100px) {
-    .langs-image {
-        margin-top: 100px;
-   }
+    #langs-logo {
+        max-width: 100%;
+        margin-top: 25vh;
+    }
     .vip-edit {
         display: none;
    }
@@ -178,9 +189,12 @@ input[type=number]::-webkit-outer-spin-button {
    }
 }
 @media (min-width: 990px) {
-    .langs-image {
-        margin-top: 150px;
-   }
+    .navbar {
+        font-size: smaller;
+    }
+    #langs-logo {
+        margin-top: 15vh;
+    }
     .footer {
         font-size: 1em;
    }
@@ -198,6 +212,7 @@ input[type=number]::-webkit-outer-spin-button {
    }
 }
 @media (min-width: 991px) {
+
 }
 @media (min-width: 1080px) {
     .vip-text {

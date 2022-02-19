@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'home',
-    'vip',
     'phonenumber_field',
     'menu',
     'events',

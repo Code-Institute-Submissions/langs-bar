@@ -1,42 +1,107 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
-
 {% endblock %}
-
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="logo-font vip-h2">VIP Booths</h2>
-        </div>
-    </div>
-</div>
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 vip-edit" responsive>
-            <img class="img-vip" src="/media/booth-party.png" alt="VIP Booth">
-        </div>
-        <div class="col-12 vip-text-div">
-            <p class="vip-text text-top">
-                1 Bottle of 70cl Spirit of your choice (from choices below), 2 Mixers (excluding bottled mixer), EXTRA MIXER £5 PER CARAFE
-            </p>
-            <p class="vip-text font-weight-bold">
-                Grey Goose - Dead Mans Finger Spiced - Gordons Pink Gin - Jack Daniels - Whitley Neil Rhubarb & Ginger
-            </p>
-            <p class="vip-text">
-                PLEASE CHECK OUR <a href="#">DRESS CODE</a> BEFORE ARRIVAL OTHER SPIRIT FLAVOURS AVAILABLE PLEASE CONTACT US A DAY BEFORE
-                ARRIVAL IF YOU WISH TO HAVE ALTERNATIVE FLAVOUR. ARRIVAL ON OR BEFORE 8PM TABLES WILL ONLY BE HELD 
-                FOR 15 MINUTES AFTER THIS TIME.
-            </p>
-        </div>
-        <div class="col-12 date-picker">
-            <p>Choose a date:</p>
-            {% for booth in booths %}
-            <button class="vip-date-btn btn btn-light" value="{{ booth.date }}" type="button">{{ booth.date }}</button>
-            {% endfor %}
-        </div>
-    </div>
+<div class="row">
+   <div class="col text-center mt-3">
+      <h2 class="logo-font">VIP Booths</h2>
+      {% for c in current_months %}
+      <a class="category-badge text-decoration-none"href="{% url 'vip' %}?month={( c.name }}">
+      <span class="p-2 badge badge-white text-white rounded-0 border border-dark">{{ c.friendly_name }}</span>
+      </a>
+      {% endfor %}
+   </div>
 </div>
+<div class="row">
+   <div class="col-10 offset-1">
+      <div class="row mt-1 mb-2">
+         <div class="col-12 col-md-6 order-md-last">
+            <div class="sort-select-wrapper event-sort-selector float-right">
+               <select id="sort-selector" class="sort-selectors" name="custom-select custom-select-sm rounded-0 border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+               <option value="reset" {% if current_sorting == "None_None"%}selected{% endif %}>Sort by...</option>
+               <option value="month_asc" {% if current_sorting == "month_asc"%}selected{% endif %}>Month (Sooner to Later)</option>
+               <option value="month_desc" {% if current_sorting == "month_desc"%}selected{% endif %}>Month (Later to Sooner)</option>
+               </select>
+            </div>
+         </div>
+         <div class="col-12 col-md-6 order-md-first">
+            <p class="text-muted mt-3 text-center text-md-left">
+               {% if current_months or current_sorting != 'None_None' %}
+               <span class="small events-home"><a href="{% url 'vip' %}">Booths Home ~</a></span>
+               {% endif %}
+               {{ booths|length }} Booths{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+            </p>
+         </div>
+      </div>
+      <div class="row">
+         <div class="row m-auto booth-table">
+            <div class="col">
+               <div class="table-responsive rounded">
+                  <table class="table table-sm table-borderless">
+                     <thead class="text-white">
+                        <tr>
+                           <th class="pb-3" scope="col">Date</th>
+                           <th class="pb-3" scope="col">Booth Size</th>
+                           <th class="pb-3 table-hide" scope="col">Qty Available</th>
+                           <th class="pb-3 table-hide" scope="col">Price Per Booth</th>
+                           <th class="pb-3 table-hide" scope="col">More Details</th>
+                        </tr>
+                     </thead>
+                     {% for booth in booths %}
+                     <tr class="bag-table">
+                        <td class="p-3">
+                           <a href="{% url 'vip_detail' booth.id %}" class="text-white">
+                              {{ booth.date }}
+                           </a>
+                        </td>
+                        <td class="py-3">
+                           <p class="my-0 text-white booth-size"><strong>{{ booth.guests }}</strong></p>
+                        </td>
+                        <td class="py-3 table-hide">
+                           <p class="my-0 text-white"><strong>{{ booth.quantity_available }}</strong></p>
+                        </td>
+                        <td class="py-3 table-hide">
+                           <p class="my-0 text-white">£{{ booth.price }}</p>
+                        </td>
+                        <td class="py-3 table-hide">
+                           <a href="{% url 'vip_detail' booth.id %}"><button>Details</button></a>
+                        </td>
+                     </tr>
+                     {% endfor %}
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+   $('#sort-selector').change(function() {
+      var selector = $(this);
+      var currentUrl = new URL(window.location);
+   
+      var selectedVal = selector.val();
+      if (selectedVal != "reset") {
+         var sort = selectedVal.split("_")[0];
+         var direction = selectedVal.split("_")[1];
+   
+         currentUrl.searchParams.set("sort", sort);
+         currentUrl.searchParams.set("direction", direction);
+   
+         window.location.replace(currentUrl);
+     }
+      else {
+         currentUrl.searchParams.delete("sort");
+         currentUrl.searchParams.delete("direction");
+   
+     }
+   })
+   
+</script>
 {% endblock %}

@@ -64,7 +64,6 @@ class OrderLineItem(models.Model):
                               related_name='lineitems')
     event = models.ForeignKey(Event, null=False, blank=False,
                                 on_delete=models.CASCADE)
-    event_date = models.CharField(max_length=254)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
                                          null=False, blank=False,

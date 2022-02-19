@@ -14,11 +14,11 @@
    </div>
 </div>
 <div class="row">
-<div class="product-container col-10 offset-1">
+<div class="col-10 offset-1">
    <div class="row mt-1 mb-2">
-      <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-end">
-         <div class="sort-select-wrapper w-50 event-sort-selector">
-            <select id="sort-selector" name="custom-select custom-select-sm rounded-0 border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+      <div class="col-12 col-md-6 order-md-last">
+         <div class="sort-select-wrapper event-sort-selector float-right">
+            <select id="sort-selector" class="sort-selectors" name="custom-select custom-select-sm rounded-0 border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
             <option value="reset" {% if current_sorting == "None_None"%}selected{% endif %}>Sort by...</option>
             <option value="month_asc" {% if current_sorting == "month_asc"%}selected{% endif %}>Month (Sooner to Later)</option>
             <option value="month_desc" {% if current_sorting == "month_desc"%}selected{% endif %}>Month (Later to Sooner)</option>

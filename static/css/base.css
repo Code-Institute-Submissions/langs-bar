@@ -53,7 +53,10 @@ nav {
 .fa-shopping-bag, .bag-price {
     color: white;
 }
-
+.sort-selectors {
+    font-weight: bold;
+    padding: 3px;
+}
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
@@ -101,17 +104,11 @@ nav {
     height: auto;
 }
 /* -------------------------------- VIP Page */
-.vip-h2 {
-    margin-bottom: 30px;
+.booth-table {
+    width: 100%;
 }
-.vip-date-btn {
-    margin-bottom: 5px;
-    width: 300px;
-}
-.date-picker {
-    margin: 50px auto;
-    width: 100px;
-    text-align: center;
+.vip-m {
+    min-height: 82.5vh;
 }
 /* -------------------------------- Events */
 .event-card {
@@ -164,7 +161,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: 75%;
 }
 .info-menu{
-    margin-top: 100px;
+    margin-top: 150px;
 }
 /* -------------------------------- Menus */
 .container {
@@ -187,6 +184,17 @@ input[type=number]::-webkit-outer-spin-button {
     .slider-div {
         margin-top: 100px;
    }
+   .table-responsive{
+       font-size: smaller;
+   }
+}
+@media (max-width: 500px) {
+    .table-hide{
+        display: none;
+    }
+    .booth-size {
+        max-width: fit-content;
+    }
 }
 @media (min-width: 990px) {
     .navbar {

@@ -34,7 +34,6 @@
             {% if current_months or current_sorting != 'None_None' %}
             <span class="small events-home"><a href="{% url 'events' %}">Events Home ~</a></span>
             {% endif %}
-            {{ events|length }} Events{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
          </p>
       </div>
    </div>

@@ -1,17 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
    <a class="navbar-brand" href="{% url 'home' %}"><i class="fas fa-home"></i></a>
-   <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
-    <div class="text-center">
-        <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-        <p class="my-0 bag-price">
-            {% if total %}
-                £{{ total|floatformat:2 }}
-            {% else %}
-                £0.00
-            {% endif %}
-        </p>
-    </div>
-</a>
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
      <span class="navbar-toggler-icon"></span>
    </button>
@@ -51,10 +39,10 @@
          </a>
          <div class="dropdown-menu dark" aria-labelledby="navbarDropdownMenuLink">
             {% if request.user.is_authenticated %}
-            {% if request.user.is_superuser %}
-           <a class="dropdown-item text-white dark nav-link" href="#">Admin</a>
-           {% endif %}
-           <a class="dropdown-item text-white dark nav-link" href="#">My Profile</a>
+              {% if request.user.is_superuser %}
+              <a class="dropdown-item text-white dark nav-link" href="{% url 'admin:index' %}">Admin</a>
+              {% endif %}
+           <a class="dropdown-item text-white dark nav-link" href="{% url 'profile' %}">My Profile</a>
            <a class="dropdown-item text-white dark nav-link" href="{% url 'account_logout' %}">Log Out</a>
            {% else %}
            <a class="dropdown-item text-white dark nav-link" href="{% url 'account_login' %}">Log In</a>
@@ -64,4 +52,16 @@
        </li>
      </ul>
    </div>
+   <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+    <div class="text-center">
+        <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+        <p class="my-0 bag-price">
+            {% if total %}
+                £{{ total|floatformat:2 }}
+            {% else %}
+                £0.00
+            {% endif %}
+        </p>
+    </div>
+</a>
  </nav>

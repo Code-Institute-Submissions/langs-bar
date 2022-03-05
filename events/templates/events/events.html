@@ -24,8 +24,6 @@
             <option value="month_desc" {% if current_sorting == "month_desc"%}selected{% endif %}>Month (Later to Sooner)</option>
             <option value="price_asc" {% if current_sorting == "price_asc"%}selected{% endif %}>Price (low to high)</option>
             <option value="price_desc" {% if current_sorting == "price_desc"%}selected{% endif %}>Price (high to low)</option>
-            <option value="rating_asc" {% if current_sorting == "rating_asc"%}selected{% endif %}>Rating (low to high)</option>
-            <option value="rating_desc" {% if current_sorting == "rating_desc"%}selected{% endif %}>Rating (high to low)</option>
             </select>
          </div>
       </div>
@@ -67,11 +65,6 @@
                         <i class="fas fa-tag mr-1">{{ event.month.friendly_name }}</i>
                         </a>
                      </p>
-                     {% endif %}
-                     {% if event.rating %}
-                     <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ event.rating }} /5</small>
-                     {% else %}
-                     <small class="text-muted">No Rating</small>
                      {% endif %}
                   </div>
                </div>

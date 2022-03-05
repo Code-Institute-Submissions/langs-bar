@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models.functions import Lower
 from .models import Event, Month
@@ -106,8 +106,19 @@ def vip_detail(request, event_id):
 
 
 def add_event(request):
-    """ Add a event to the store """
-    form = EventForm()
+    """ Add a Event to the store """
+    if request.method == 'POST':
+        form = EventForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added event!')
+            return redirect(reverse('add_event'))
+        else:
+            messages.error(request, 'Failed to add event.' /
+                                    'Please ensure the form is valid.')
+    else:
+        form = EventForm()
+
     template = 'events/add_event.html'
     context = {
         'form': form,

@@ -3,7 +3,7 @@ from .models import Event, Month
 
 
 class EventForm(forms.ModelForm):
-""" An admin add event form """
+    """ An admin add event form """
     class Meta:
         model = Event
         fields = '__all__'

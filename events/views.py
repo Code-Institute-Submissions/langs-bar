@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.db.models.functions import Lower
 from .models import Event, Month
+from .forms import EventForm
 
 # Create your views here.
 
@@ -45,6 +46,7 @@ def all_events(request):
 
     return render(request, 'events/events.html', context)
 
+
 def event_detail(request, event_id):
     """ A View to return an individual event details """
     event = get_object_or_404(Event, pk=event_id)
@@ -52,6 +54,7 @@ def event_detail(request, event_id):
         'event': event
     }
     return render(request, 'events/event_detail.html', context)
+
 
 def all_vip(request):
     """ A View to return the events.html """
@@ -92,6 +95,7 @@ def all_vip(request):
 
     return render(request, 'events/vip.html', context)
 
+
 def vip_detail(request, event_id):
     """ A View to return an individual event details """
     event = get_object_or_404(Event, pk=event_id)
@@ -99,3 +103,14 @@ def vip_detail(request, event_id):
         'event': event
     }
     return render(request, 'events/vip_detail.html', context)
+
+
+def add_event(request):
+    """ Add a event to the store """
+    form = EventForm()
+    template = 'events/add_event.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

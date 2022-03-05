@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Add An Event</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <form method="POST" action="{% url 'add_event' %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-right">
+                    <a class="btn border-white rounded-0 text-white" href="{% url 'events' %}">Cancel</a>
+                    <button class="btn border-white rounded-0 text-white" type="submit">Add Event</button>
+                </div>
+            </form>
+        </div> 
+        <div class="col-12 col-md-6">
+            <hr>
+            <h3>Instructions</h3>
+            <hr>
+            <p>For Events, you can skip the booth size option if this is not needed.
+                Required fields are shown with a astrix *.
+                Quantity should be used to control the amount customers you are allowing in the venue.</p>
+            <p>For VIP Booths, please give a booth size so your customers know how many are allowed per booth.
+                Quantity should be used to control the amount of available booths.
+                Please ensure VIP booths are created with the vip booth image.</p>
+        </div>          
+    </div>
+
+</div>
+{% endblock %}

@@ -1,7 +1,10 @@
+* {
+    color: white !important;
+}
 html {
     height: 100%;
     background-color: #030509;
-    color: white;
+    color: white !important;
 }
 body {
     background-color: #030509;

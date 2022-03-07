@@ -18,8 +18,8 @@
    <div class="col-10 offset-1">
       <div class="row mt-1 mb-2">
          <div class="col-12 col-md-6 order-md-last">
-            <div class="sort-select-wrapper event-sort-selector float-right">
-               <select id="sort-selector" class="sort-selectors" name="custom-select custom-select-sm rounded-0 border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+            <div class="sort-select-wrapper event-sort-selector float-right text-dark">
+               <select id="sort-selector" class="sort-selectors text-dark" name="custom-select custom-select-sm rounded-0 border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                <option value="reset" {% if current_sorting == "None_None"%}selected{% endif %}>Sort by...</option>
                <option value="month_asc" {% if current_sorting == "month_asc"%}selected{% endif %}>Month (Sooner to Later)</option>
                <option value="month_desc" {% if current_sorting == "month_desc"%}selected{% endif %}>Month (Later to Sooner)</option>
@@ -66,7 +66,7 @@
                            <p class="my-0 text-white">£{{ event.price }}</p>
                         </td>
                         <td class="py-3 table-hide">
-                           <a href="{% url 'vip_detail' event.id %}"><button>Details</button></a>
+                           <a href="{% url 'vip_detail' event.id %}"><button class="text-dark">Details</button></a>
                         </td>
                      </tr>
                      {% endif %}

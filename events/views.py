@@ -106,19 +106,18 @@ def vip_detail(request, event_id):
 
 
 def add_event(request):
-    """ Add a Event to the store """
+    """ Add a event to the store """
     if request.method == 'POST':
         form = EventForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            event = form.save()
             messages.success(request, 'Successfully added event!')
-            return redirect(reverse('add_event'))
+            return redirect(reverse('event_detail', args=[event.id]))
         else:
-            messages.error(request, 'Failed to add event.' /
-                                    'Please ensure the form is valid.')
+            messages.error(request, 'Failed to add event. Please ensure the form is valid.')
     else:
         form = EventForm()
-
+        
     template = 'events/add_event.html'
     context = {
         'form': form,
@@ -149,3 +148,11 @@ def edit_event(request, event_id):
     }
 
     return render(request, template, context)
+
+
+def delete_event(request, event_id):
+    """ Delete a event from the store """
+    event = get_object_or_404(Event, pk=event_id)
+    event.delete()
+    messages.success(request, 'Event deleted!')
+    return redirect(reverse('events'))

@@ -55,7 +55,7 @@
                                  </span>
                                  </button>
                               </div>
-                              <input readonly class="form-control form-control-sm qty_input" type="number"
+                              <input readonly class="form-control form-control-sm qty_input text-dark" type="number"
                                  name="quantity" value="{{ item.quantity }}" min="1" max="{{item.event.quantity}}"
                                  data-item_id="{{ item.item_id }}"
                                  id="id_qty_{{ item.item_id }}">
@@ -71,8 +71,8 @@
                         </div>
                         <p class="text-white">Available: {{ item.event.quantity }}</p>
                      </form>
-                     <a class="update-link text-info"><small>Update</small></a>
-                     <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                     <a class="btn update-link text-info"><small class="text-info">Update</small></a>
+                     <a class="btn remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small class="text-danger">Remove</small></a>
                   </td>
                   <td class="py-3">
                      <p class="my-0 text-white">£{{ item.event.price | calc_subtotal:item.quantity }}</p>

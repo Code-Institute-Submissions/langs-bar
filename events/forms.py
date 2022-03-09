@@ -18,4 +18,4 @@ class EventForm(forms.ModelForm):
 
         self.fields['month'].choices = friendly_names
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-white text-white'
+            field.widget.attrs['class'] = 'border-white text-dark'

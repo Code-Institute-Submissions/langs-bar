@@ -4,5 +4,5 @@ from django.shortcuts import render
 
 
 def contact(request):
-    """ A View to return the index.html """
+    """ A View to return the contact.html """
     return render(request, 'contact/contact.html')

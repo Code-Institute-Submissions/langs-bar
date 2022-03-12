@@ -195,6 +195,10 @@ input[type=number]::-webkit-outer-spin-button {
 .custom-control-label{
     cursor: pointer;
 }
+/* -------------------------------- About */
+#langs-front {
+    max-width: 80%;
+}
 /* -------------------------------- Media Queries */
 @media (min-width: 100px) {
     #langs-logo {

@@ -31,7 +31,7 @@ DEBUG = os.environ.get('DEVELOPMENT')
 
 ALLOWED_HOSTS = ['localhost',
                  'https://8000-techcentreuk-langsbar-6w1guv3esdm.ws-eu34xl.gitpod.io/',
-                 'langs-bar-and-cocktail-lounge.herokuapp.com/']
+                 'langs-bar-and-cocktail-lounge.herokuapp.com']
 
 
 # Application definition

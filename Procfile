@@ -1,1 +1,1 @@
-web: gunicorn langs.wsgi
+web: gunicorn langs.wsgi:application

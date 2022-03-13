@@ -1,0 +1,293 @@
+* {
+    color: white !important;
+}
+html {
+    height: 100%;
+    background-color: #030509;
+    color: white !important;
+}
+body {
+    background-color: #030509;
+    background-size: cover;
+    min-height: calc(100vh);
+    color: white !important;
+    font-family: 'Quicksand';
+}
+.anyClass {
+    height:700px;
+    overflow-y: scroll;
+}
+.anyClass::-webkit-scrollbar {
+    width: 11px;
+}
+.anyClass::-webkit-scrollbar-track {
+    background: white;
+}
+.anyClass::-webkit-scrollbar-thumb {
+    background-color: #030509;
+    border-radius: 6px;
+    border: 3px solid white;
+}
+.text-black {
+    color: black !important;
+}
+nav {
+    border-bottom: 1px solid white;
+}
+.nav-item {
+    margin: 15px 20px;
+    text-align: center;
+}
+.nav-link {
+    transition: 0.7s;
+}
+.nav-link:hover {
+    transform: scale(1.2);
+}
+.dark {
+    background-color: #030509;
+}
+.dark:hover {
+    background-color: #030509;
+}
+.fa-home {
+    font-size: 2em;
+}
+.fa-shopping-bag, .bag-price {
+    color: white;
+}
+.sort-selectors {
+    font-weight: bold;
+    padding: 3px;
+}
+/* ------------------------------- bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/* -------------------------------- Footer */
+.footer {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    font-size: 0.8em;
+    border-top: 1px solid white;
+    background-color: #030509;
+}
+.footer-link {
+    color: white;
+    text-decoration: none;
+}
+.footer-link:hover {
+    color: grey !important;
+    text-decoration: none;
+}
+/* -------------------------------- index Page */
+.langs-image {
+    height: 82.5vh;
+}
+#langs-logo {
+    max-width: 100%;
+    margin-top: 25vh;
+}
+.responsive {
+    max-width: 100%;
+    height: auto;
+}
+/* -------------------------------- VIP Page */
+.booth-table {
+    width: 100%;
+}
+.vip-m {
+    min-height: 82.5vh;
+}
+/* -------------------------------- Events */
+.event-card {
+    margin-bottom: 25px;
+    text-align: center;
+}
+.hr-event {
+    background-color: white;
+}
+a.category-badge > span.badge:hover {
+    background: white !important;
+    color: #030509 !important;
+}
+.events-home a {
+    color: white;
+    text-decoration: none;
+}
+.event-sort-selector {
+    text-align: right;
+}
+.fa-minus, .fa-plus {
+    color: white !important;
+}
+.decrement-qty, .increment-qty {
+    border: 1px solid white;
+}
+.qty_input {
+    max-width: 60px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+}
+.quantity-div {
+    margin-top: 50px;
+}
+.btn-invert:hover {
+    background: white !important;
+    color: #030509 !important;
+}
+/* -------------------------------- Bag */
+.bag-table {
+    border-bottom: 1px solid white;
+}
+
+/* -------------------------------- Menus */
+.slider-div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+.info-menu{
+    margin-top: 150px;
+}
+.container {
+    min-height: 82.5vh;
+}
+/* Product Form */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #dc3545;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 0;
+}
+.custom-control-label{
+    cursor: pointer;
+}
+/* -------------------------------- About */
+#langs-front {
+    max-width: 80%;
+}
+/* -------------------------------- Contact */
+.contact-form-overlay {
+    background-color: rgba(3,5,9,0.5);
+    height: 100%;
+}
+.contact-image {
+    background-image:url(/media/langs_bar_drinks.jpeg);
+    background-position:center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height:100%;
+}
+.submit-contact {
+    background-color: black;
+    border: 1px solid white;
+}
+/* -------------------------------- Evening Tables */
+.submit-tables {
+    background-color: black;
+    border: 1px solid white;
+}
+/* -------------------------------- Media Queries */
+@media (min-width: 100px) {
+    #langs-logo {
+        max-width: 100%;
+        margin-top: 25vh;
+    }
+    .vip-edit {
+        display: none;
+   }
+    .responsive-menu {
+        max-width: 350px;
+        height: auto;
+        margin: auto;
+   }
+    .slider-div {
+        margin-top: 100px;
+   }
+   .table-responsive{
+       font-size: smaller;
+   }
+   .spoiler-btn {
+    width: 200px;
+    }
+}
+@media (max-width: 500px) {
+    .table-hide{
+        display: none;
+    }
+    .booth-size {
+        max-width: fit-content;
+    }
+}
+@media (min-width: 990px) {
+    .navbar {
+        font-size: smaller;
+    }
+    #langs-logo {
+        margin-top: 15vh;
+    }
+    .footer {
+        font-size: 1em;
+   }
+    .vip-edit {
+        display: contents;
+   }
+    .img-vip {
+        margin: auto;
+   }
+    .responsive-menu {
+        max-width: 500px;
+   }
+    .slider-div {
+        margin-top: 0;
+   }
+   .spoiler-btn {
+    width: 400px;
+    }
+}
+@media (min-width: 991px) {
+
+}
+@media (min-width: 1080px) {
+    .vip-text {
+        width: 75%;
+        text-align: center;
+        margin: auto;
+   }
+    .text-top {
+        margin-top: 50px;
+   }
+}

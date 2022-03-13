@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEVELOPMENT')
 
-ALLOWED_HOSTS = ['localhost', 'https://8000-techcentreuk-langsbar-6w1guv3esdm.ws-eu34xl.gitpod.io/']
+ALLOWED_HOSTS = ['localhost', 'https://8000-techcentreuk-langsbar-6w1guv3esdm.ws-eu34xl.gitpod.io/', 'https://langs-bar-and-cocktail-lounge.herokuapp.com/']
 
 
 # Application definition

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_header %}
+{% endblock %}
+{% block content %}
+<div class="container mb-5">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font pb-5 text-center">Evening Tables Enquiry</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row m-auto">
+        <div class="col-12 col-lg-6 order-lg-last mb-5 m-auto">
+            <p>
+                Booking a table is not necessary for entry but does ensure you have a comfortable spot and guaranteed entry into the venue before 8pm.
+            </p>
+            <p>
+                Table Reservations are only confirmed once you have recieved a confirmation email from a member of our team.
+            </p>
+            <p>
+                Tables can only be booked up until 8pm, After this time its first come first served.
+                You do <span class="text-danger">NOT</span> need a table to gain entry.
+            </p>
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="submit-tables rounded">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

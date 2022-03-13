@@ -3,10 +3,22 @@
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
      <span class="navbar-toggler-icon"></span>
    </button>
+    <div class="text-center order-lg-last">
+      <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+        <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+        <p class="my-0 bag-price">
+            {% if total %}
+                £{{ total|floatformat:2 }}
+            {% else %}
+                £0.00
+            {% endif %}
+        </p>
+      </a>
+    </div>
    <div class="collapse navbar-collapse" id="navbarNavDropdown">
      <ul class="navbar-nav m-auto">
        <li class="nav-item active">
-         <a class="nav-link text-white" href="#">Evening Table Booking's <span class="sr-only">(current)</span></a>
+         <a class="nav-link text-white" href="{% url 'tables' %}">Evening Table Booking's <span class="sr-only">(current)</span></a>
        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -52,16 +64,5 @@
        </li>
      </ul>
    </div>
-   <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
-    <div class="text-center">
-        <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-        <p class="my-0 bag-price">
-            {% if total %}
-                £{{ total|floatformat:2 }}
-            {% else %}
-                £0.00
-            {% endif %}
-        </p>
-    </div>
 </a>
  </nav>

@@ -29,7 +29,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEVELOPMENT')
 
-ALLOWED_HOSTS = ['localhost', 'https://8000-techcentreuk-langsbar-6w1guv3esdm.ws-eu34xl.gitpod.io/', 'https://langs-bar-and-cocktail-lounge.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost',
+                 'https://8000-techcentreuk-langsbar-6w1guv3esdm.ws-eu34xl.gitpod.io/',
+                 'langs-bar-and-cocktail-lounge.herokuapp.com/']
 
 
 # Application definition
@@ -198,7 +200,7 @@ if 'DEVELOPMENT' in os.environ:
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
-    # EMAIL_PORT = 
+    # EMAIL_PORT =
     EMAIL_HOST = ''
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')

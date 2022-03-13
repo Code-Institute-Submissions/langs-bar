@@ -1,10 +1,31 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
-
 {% endblock %}
-
 {% block content %}
-
+<div class="container contact-image">
+    <div class="contact-form-overlay">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font pb-5 pt-5 text-center">Contact Us</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row m-auto">
+            <div class="col-12 col-lg-6 order-lg-last mb-5 m-auto">
+                <h4>Contact us directly if you have any questions</h4>
+                <p>
+                    Please write your name, email address and a message below if you have any questions.
+                    One of our staff members will be happy to contact you directly and answer your questions as soon as possible. 
+                </p>
+                <form method="post">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit" class="submit-contact rounded">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

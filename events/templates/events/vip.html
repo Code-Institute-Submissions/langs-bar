@@ -20,7 +20,6 @@
          <div class="col-12 col-md-6 order-md-last">
             <div class="sort-select-wrapper event-sort-selector float-right text-dark">
                <select id="sort-selector" class="sort-selectors text-dark" name="custom-select custom-select-sm rounded-0 border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-               <option value="reset" {% if current_sorting == "None_None"%}selected{% endif %}>Sort by...</option>
                <option value="month_asc" {% if current_sorting == "month_asc"%}selected{% endif %}>Month (Sooner to Later)</option>
                <option value="month_desc" {% if current_sorting == "month_desc"%}selected{% endif %}>Month (Later to Sooner)</option>
                </select>

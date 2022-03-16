@@ -19,7 +19,7 @@
             <table class="table table-sm table-borderless">
                <thead class="text-white">
                   <tr>
-                     <th scope="col"></th>
+                     <th class="hide-s" scope="col"></th>
                      <th scope="col">Event</th>
                      <th scope="col">Price</th>
                      <th scope="col">Qty</th>
@@ -28,7 +28,7 @@
                </thead>
                {% for item in bag_items %}
                <tr class="bag-table">
-                  <td class="p-3 w-25">
+                  <td class="p-3 w-25 hide-s">
                      {% if item.event.image %}
                      <img class="img-fluid rounded" src="{{ item.event.image.url }}">
                      {% else %}
@@ -36,7 +36,7 @@
                      {% endif %}
                   </td>
                   <td class="py-3">
-                     <p class="my-0 text-white"><strong>{{ item.event.name }}</strong></p>
+                     <p class="my-0 smaller text-white"><strong>{{ item.event.name }}</strong></p>
                      <p class="my-0 small text-white">Date: {{ item.event.date }}</p>
                   </td>
                   <td class="py-3">
@@ -90,10 +90,10 @@
                      <span class="icon text-white">
                      <i class="fas fa-chevron-left text-white"></i>
                      </span>
-                     <span class="text-uppercase text-white">Back to Events</span>
+                     <span class="text-uppercase text-size text-white">Back to Events</span>
                      </a>
                      <a href="{% url 'checkout' %}" class="btn border-white rounded-0 btn-lg">
-                     <span class="text-uppercase text-white">Secure Checkout</span>
+                     <span class="text-uppercase text-size text-white">Secure Checkout</span>
                      <span class="icon">
                      <i class="fas fa-lock text-white"></i>
                      </span>

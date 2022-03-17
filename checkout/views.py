@@ -70,7 +70,12 @@ def checkout(request):
                             event=event,
                             quantity=item_data,
                         )
+                        print(order_line_item.quantity)
+                        print(event.quantity)
                         order_line_item.save()
+                        event.quantity = event.quantity - order_line_item.quantity
+                        event.save()
+                        print(event.quantity)
 
                 except Event.DoesNotExist:
                     messages.error(request, (

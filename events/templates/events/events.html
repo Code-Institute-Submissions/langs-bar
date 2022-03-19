@@ -36,6 +36,7 @@
    </div>
    <div class="row events-row">
       {% for event in events %}
+      {% if event.active_expired == 'active' %}
       {% if event.quantity > 0 %}
       {% if not event.booth_size %}
       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 event-card">
@@ -96,6 +97,7 @@
       <div class="col-12 d-none d-xl-block mb-5">
          <hr class="hr-event">
       </div>
+      {% endif %}
       {% endif %}
       {% endif %}
       {% endif %}

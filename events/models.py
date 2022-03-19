@@ -21,6 +21,12 @@ class Month(models.Model):
         return f"{self.friendly_name}"
 
 
+ACTIVE_EXPIRED = [
+    ('active', 'Active'),
+    ('expired', 'Expired'),
+]
+
+
 class Event(models.Model):
     """ A Model for events """
     month = models.ForeignKey('Month', null=True, blank=True, on_delete=models.SET_NULL)
@@ -33,6 +39,8 @@ class Event(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(upload_to='images/', blank=True, null=True)
+    active_expired = models.CharField(choices=ACTIVE_EXPIRED, default='active', max_length=200)
+
 
     def __str__(self):
-        return f"{self.name} - {self.date}"
+        return f"{self.name} - {self.date} - {self.active_expired}"

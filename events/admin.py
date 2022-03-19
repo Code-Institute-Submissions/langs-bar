@@ -10,7 +10,7 @@ class MonthAdmin(admin.ModelAdmin):
 
 class EventAdmin(admin.ModelAdmin):
     """ Admin Event Display Fields """
-    list_display = ('name', 'date')
+    list_display = ('name', 'date', 'active_expired')
 
 admin.site.register(Month, MonthAdmin)
 admin.site.register(Event, EventAdmin)

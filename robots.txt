@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Disallow: https://langs-bar-and-cocktail-lounge.herokuapp.com/sitemap.xml

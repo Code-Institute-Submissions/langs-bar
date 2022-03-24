@@ -1,69 +1,70 @@
+<!-- Main NavBar & Mobile NavBar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
-   <a class="navbar-brand" href="{% url 'home' %}"><i class="fas fa-home"></i></a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="navbar-toggler-icon"></span>
-   </button>
-    <div class="text-center order-lg-last">
-      <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+  <a class="navbar-brand" href="{% url 'home' %}"><i class="fas fa-home"></i></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="text-center order-lg-last">
+     <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
         <div><i class="fas fa-shopping-bag fa-lg"></i></div>
         <p class="my-0 bag-price">
-            {% if total %}
-                £{{ total|floatformat:2 }}
-            {% else %}
-                £0.00
-            {% endif %}
+           {% if total %}
+           £{{ total|floatformat:2 }}
+           {% else %}
+           £0.00
+           {% endif %}
         </p>
-      </a>
-    </div>
-   <div class="collapse navbar-collapse" id="navbarNavDropdown">
+     </a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
      <ul class="navbar-nav m-auto">
-       <li class="nav-item active">
-         <a class="nav-link text-white" href="{% url 'tables' %}">Evening Table Booking's <span class="sr-only">(current)</span></a>
-       </li>
+        <li class="nav-item active">
+           <a class="nav-link text-white" href="{% url 'tables' %}">Evening Table Booking's <span class="sr-only">(current)</span></a>
+        </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Brunch & Event Calander
-          </a>
-          <div class="dropdown-menu dark" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'events' %}">All Events</a>
-            <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'vip' %}">VIP Booth Booking's</a>
-            <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'events' %}?sort=price&direction=asc">By Price</a>
-            <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'events' %}?sort=month&direction=asc">By Month</a>
-          </div>
-       </li>
-       <li class="nav-item">
-         <a class="nav-link text-white" href="{% url 'menu' %}">Menu's</a>
-       </li>
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Brunch & Event Calander
+           </a>
+           <div class="dropdown-menu dark" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'events' %}">All Events</a>
+              <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'vip' %}">VIP Booth Booking's</a>
+              <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'events' %}?sort=price&direction=asc">By Price</a>
+              <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'events' %}?sort=month&direction=asc">By Month</a>
+           </div>
+        </li>
+        <li class="nav-item">
+           <a class="nav-link text-white" href="{% url 'menu' %}">Menu's</a>
+        </li>
+        <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            More
-         </a>
-         <div class="dropdown-menu dark" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'about' %}">About Langs</a>
-          <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'privacy' %}">Privacy Policy</a>
-           <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'location' %}">Location</a>
-           <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'dresscode' %}">Dress Codes</a>
-           <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'contact' %}">Contact Us</a>
-         </div>
-       </li>
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           </a>
+           <div class="dropdown-menu dark" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'about' %}">About Langs</a>
+              <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'privacy' %}">Privacy Policy</a>
+              <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'location' %}">Location</a>
+              <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'dresscode' %}">Dress Codes</a>
+              <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'contact' %}">Contact Us</a>
+           </div>
+        </li>
+        <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            My Account
-         </a>
-         <div class="dropdown-menu dark" aria-labelledby="navbarDropdownMenuLink">
-            {% if request.user.is_authenticated %}
+           </a>
+           <div class="dropdown-menu dark" aria-labelledby="navbarDropdownMenuLink">
+              {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
               <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'add_event' %}">Add An Event</a>
               {% endif %}
-           <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'profile' %}">My Profile</a>
-           <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'account_logout' %}">Log Out</a>
-           {% else %}
-           <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'account_login' %}">Log In</a>
-           <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'account_signup' %}">Register</a>
-           {% endif %}
-         </div>
-       </li>
+              <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'profile' %}">My Profile</a>
+              <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'account_logout' %}">Log Out</a>
+              {% else %}
+              <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'account_login' %}">Log In</a>
+              <a class="dropdown-item text-white dark nav-link text-center border-bottom" href="{% url 'account_signup' %}">Register</a>
+              {% endif %}
+           </div>
+        </li>
      </ul>
-   </div>
-</a>
- </nav>
+  </div>
+  </a>
+</nav>

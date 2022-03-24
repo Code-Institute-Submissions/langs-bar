@@ -1,24 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
-
 {% endblock %}
-
 {% block content %}
-<!-- 404 error handler -->
+<!-- 500 error handler -->
 <div class="container">
-    <div class="row">
-        <div class="col">
-           <hr class="hr-event">
-           <h2 class="logo-font mb-4 text-center">500 internal server error</h2>
-           <hr class="hr-event">
-        </div>
-     </div>
-     <div class="text-center mt-5">
-        <p class="text-center">It seems our servers have encountered an error.</p>
-        <p class="text-center">Let's get you out of here.</p>
-        <p>Click <a href="{% url 'home' %}" class="text-info">HERE</a> to go back to the homepage.</p>
-    </div>
+   <div class="row">
+      <div class="col">
+         <hr class="hr-event">
+         <h2 class="logo-font mb-4 text-center">500 internal server error</h2>
+         <hr class="hr-event">
+      </div>
+   </div>
+   <div class="text-center mt-5">
+      <p class="text-center">It seems our servers have encountered an error.</p>
+      <p class="text-center">Let's get you out of here.</p>
+      <p>Click <a href="{% url 'home' %}" class="text-info">HERE</a> to go back to the homepage.</p>
+   </div>
 </div>
 {% endblock %}

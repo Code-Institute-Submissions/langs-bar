@@ -1,59 +1,59 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
-
 {% endblock %}
-
 {% block content %}
+<!-- Admin Add A Product / Event Page -->
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <hr>
-            <h2 class="logo-font mb-4">Add An Event</h2>
-            <hr>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <form method="POST" action="{% url 'add_event' %}" class="form mb-2" enctype="multipart/form-data">
-                {% csrf_token %}
-                    {% for field in form %}
-                        {% if field.name != 'image' %}
-                            {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
-                    {% endfor %}
-                <div class="text-right">
-                    <a class="btn border-white rounded-0 text-white" href="{% url 'events' %}">Cancel</a>
-                    <button class="btn border-white rounded-0 text-white" type="submit">Add Event</button>
-                </div>
-            </form>
-        </div> 
-        <div class="col-12 col-md-6">
-            <hr>
-            <h3>Instructions</h3>
-            <hr>
-            <p>* Your Customers cannot see this page *</p>
-            <p>For Events, you can skip the booth size option if this is not needed.
-                Required fields are shown with a astrix *.
-                Quantity should be used to control the amount customers you are allowing in the venue.</p>
-            <p>For VIP Booths, please give a booth size so your customers know how many are allowed per booth.
-                Quantity should be used to control the amount of available booths.
-                Please ensure VIP booths are created with the vip booth image.</p>
-        </div>          
-    </div>
-
+   <!-- Page Title Row -->
+   <div class="row">
+      <div class="col">
+         <hr>
+         <h2 class="logo-font mb-4">Add An Event</h2>
+         <hr>
+      </div>
+   </div>
+   <!-- Main Content Row -->
+   <div class="row">
+      <div class="col-12 col-md-6">
+         <form method="POST" action="{% url 'add_event' %}" class="form mb-2" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+            {% if field.name != 'image' %}
+            {{ field | as_crispy_field }}
+            {% else %}
+            {{ field }}
+            {% endif %}
+            {% endfor %}
+            <div class="text-right">
+               <a class="btn border-white rounded-0 text-white" href="{% url 'events' %}">Cancel</a>
+               <button class="btn border-white rounded-0 text-white" type="submit">Add Event</button>
+            </div>
+         </form>
+      </div>
+      <div class="col-12 col-md-6">
+         <hr>
+         <h3>Instructions</h3>
+         <hr>
+         <p>* Your Customers cannot see this page *</p>
+         <p>For Events, you can skip the booth size option if this is not needed.
+            Required fields are shown with a astrix *.
+            Quantity should be used to control the amount customers you are allowing in the venue.
+         </p>
+         <p>For VIP Booths, please give a booth size so your customers know how many are allowed per booth.
+            Quantity should be used to control the amount of available booths.
+            Please ensure VIP booths are created with the vip booth image.
+         </p>
+      </div>
+   </div>
 </div>
 {% endblock %}
 {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-        $('#new-image').change(function() {
-            var file = $('#new-image')[0].files[0];
-            $('#filename').text(`Image will be set to: ${file.name}`);
-        });
-    </script>
+{{ block.super }}
+<script type="text/javascript">
+   $('#new-image').change(function() {
+       var file = $('#new-image')[0].files[0];
+       $('#filename').text(`Image will be set to: ${file.name}`);
+   });
+</script>
 {% endblock %}

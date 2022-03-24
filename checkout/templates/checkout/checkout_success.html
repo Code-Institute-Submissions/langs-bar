@@ -1,109 +1,103 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
-
 {% block page_header %}
-
 {% endblock %}
-
 {% block content %}
+<!-- Checkout Success Page -->
 <div class="container success-container">
-    <div class="row">
-        <div class="col">
-            <hr>
-            <h2 class="logo-font mb-4">Thank You</h2>
-            <hr>
-            <p class="text-white">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 col-lg-7">
-            <div class="order-confirmation-wrapper p-2 border">
-                <div class="row">
-                    <div class="col">
-                        <small class="text-white">Order Info:</small>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <p class="mb-0 text-white font-weight-bold">Order Number</p>
-                    </div>
-                    <div class="col-12 col-md-8 text-md-right">
-                        <p class="mb-0">{{ order.order_number }}</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-4 mb-2">
-                        <p class="mb-0 text-white font-weight-bold">Order Date</p>
-                    </div>
-                    <div class="col-12 col-md-8 text-md-right">
-                        <p class="mb-0">{{ order.date }}</p>
-                    </div>
-                </div>
-
-                <div class="row mt-2 mb-2">
-                    <div class="col">
-                        <small class="text-white">Order Details:</small>
-                    </div>
-                </div>
-
-                {% for item in order.lineitems.all %}
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <p class="mb-0 text-white font-weight-bold">
-                            Event Name:
-                        </p>
-                        <p class="small mb-0 text-white font-weight-bold">
-                            {{ item.event.name }}
-                        </p>
-                        <p class="mt-2 mb-0 text-white font-weight-bold">
-                            Event Date:
-                        </p>
-                        <p class="small mb-0 text-white font-weight-bold">
-                            {{ item.event.date }}
-                        </p>
-                    </div>
-                    <div class="col-12 col-md-8 text-md-right">
-                        <p class="mt-2 small mb-0">{{ item.quantity }} @ £{{ item.event.price }} each</p>
-                    </div>
-                </div>
-                {% endfor %}
-
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <p class="mt-3 mb-0 text-white font-weight-bold">Order Total</p>
-                    </div>
-                    <div class="col-12 col-md-8 text-md-right">
-                        <p class="mt-3 mb-0">£{{ order.order_total }}</p>
-                    </div>
-                </div>
+   <!-- Page Title Row -->
+   <div class="row">
+      <div class="col">
+         <hr>
+         <h2 class="logo-font mb-4">Thank You</h2>
+         <hr>
+         <p class="text-white">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+      </div>
+   </div>
+   <!-- Main Content Row -->
+   <!-- Order Info -->
+   <div class="row">
+      <div class="col-12 col-lg-7">
+         <div class="order-confirmation-wrapper p-2 border">
+            <div class="row">
+               <div class="col">
+                  <small class="text-white">Order Info:</small>
+               </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-lg-7 text-right">
-            {% if from_profile %}
-                <a href="{% url 'profile' %}" class="btn btn-white rounded-0 my-2">
-                    <span class="icon mr-2">
-                        <i class="fas fa-angle-left text-white"></i>
-                    </span>
-                    <span class="text-uppercase text-white">Back to Profile</span>
-                </a>
-            {% else %}
-                <a href="{% url 'events' %}" class="btn btn-white rounded-0 my-2">
-                    <span class="icon mr-2">
-                        <i class="fas fa-chevron-left text-white"></i>
-                    </span>
-                    <span class="text-uppercase text-white">Checkout our other events!</span>
-                </a>
-            {% endif %}
-        </div>
-    </div>
+            <div class="row">
+               <div class="col-12 col-md-4">
+                  <p class="mb-0 text-white font-weight-bold">Order Number</p>
+               </div>
+               <div class="col-12 col-md-8 text-md-right">
+                  <p class="mb-0">{{ order.order_number }}</p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-12 col-md-4 mb-2">
+                  <p class="mb-0 text-white font-weight-bold">Order Date</p>
+               </div>
+               <div class="col-12 col-md-8 text-md-right">
+                  <p class="mb-0">{{ order.date }}</p>
+               </div>
+            </div>
+            <div class="row mt-2 mb-2">
+               <div class="col">
+                  <small class="text-white">Order Details:</small>
+               </div>
+            </div>
+            {% for item in order.lineitems.all %}
+            <div class="row">
+               <div class="col-12 col-md-4">
+                  <p class="mb-0 text-white font-weight-bold">
+                     Event Name:
+                  </p>
+                  <p class="small mb-0 text-white font-weight-bold">
+                     {{ item.event.name }}
+                  </p>
+                  <p class="mt-2 mb-0 text-white font-weight-bold">
+                     Event Date:
+                  </p>
+                  <p class="small mb-0 text-white font-weight-bold">
+                     {{ item.event.date }}
+                  </p>
+               </div>
+               <div class="col-12 col-md-8 text-md-right">
+                  <p class="mt-2 small mb-0">{{ item.quantity }} @ £{{ item.event.price }} each</p>
+               </div>
+            </div>
+            {% endfor %}
+            <div class="row">
+               <div class="col-12 col-md-4">
+                  <p class="mt-3 mb-0 text-white font-weight-bold">Order Total</p>
+               </div>
+               <div class="col-12 col-md-8 text-md-right">
+                  <p class="mt-3 mb-0">£{{ order.order_total }}</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-12 col-lg-7 text-right">
+         {% if from_profile %}
+         <a href="{% url 'profile' %}" class="btn btn-white rounded-0 my-2">
+         <span class="icon mr-2">
+            <i class="fas fa-angle-left text-white"></i>
+         </span>
+         <span class="text-uppercase text-white">Back to Profile</span>
+         </a>
+         {% else %}
+         <a href="{% url 'events' %}" class="btn btn-white rounded-0 my-2">
+         <span class="icon mr-2">
+            <i class="fas fa-chevron-left text-white"></i>
+         </span>
+         <span class="text-uppercase text-white">Checkout our other events!</span>
+         </a>
+         {% endif %}
+      </div>
+   </div>
 </div>
 {% endblock %}

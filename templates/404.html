@@ -1,23 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
-
 {% endblock %}
-
 {% block content %}
 <!-- 404 error handler -->
 <div class="container">
-    <div class="row">
-        <div class="col">
-           <hr class="hr-event">
-           <h2 class="logo-font mb-4 text-center">404 Not Found</h2>
-           <hr class="hr-event">
-        </div>
-     </div>
-     <div class="text-center mt-5">
-        <h2>Uh Oh! It looks like you have got lost?</h2>
-        <p>Click <a href="{% url 'home' %}" class="text-info">HERE</a> to go back to the homepage.</p>
-    </div>
+   <div class="row">
+      <div class="col">
+         <hr class="hr-event">
+         <h2 class="logo-font mb-4 text-center">404 Not Found</h2>
+         <hr class="hr-event">
+      </div>
+   </div>
+   <div class="text-center mt-5">
+      <h2>Uh Oh! It looks like you have got lost?</h2>
+      <p>Click <a href="{% url 'home' %}" class="text-info">HERE</a> to go back to the homepage.</p>
+   </div>
 </div>
 {% endblock %}

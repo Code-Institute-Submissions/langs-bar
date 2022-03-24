@@ -4,7 +4,9 @@
 {% block page_header %}
 {% endblock %}
 {% block content %}
+<!-- Bag Page -->
 <div class="container">
+   <!-- Page Title Row -->
    <div class="row">
       <div class="col">
          <hr class="hr-event">
@@ -12,8 +14,10 @@
          <hr class="hr-event">
       </div>
    </div>
+   <!-- Main Content Row -->
    <div class="row">
       <div class="col">
+         <!-- If Bag Has Items -->
          {% if bag_items %}
          <div class="table-responsive rounded">
             <table class="table table-sm table-borderless">
@@ -102,6 +106,7 @@
                </tr>
             </table>
          </div>
+         <!-- If Bag Is Empty -->
          {% else %}
          <p class="lead mb-5">Your bag is empty.</p>
          <a href="{% url 'events' %}" class="btn btn-outline-black rounded-0 btn-lg">
@@ -117,25 +122,26 @@
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}
+<!-- Quantity Input Script -->
 {% include 'events/includes/quantity_input_script_bag.html' %}
 <script type="text/javascript">
-    // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
-
-    // Remove item and reload on click
-    $('.remove-item').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
-
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
+   // Update quantity on click
+   $('.update-link').click(function(e) {
+       var form = $(this).prev('.update-form');
+       form.submit();
+   })
+   
+   // Remove item and reload on click
+   $('.remove-item').click(function(e) {
+       var csrfToken = "{{ csrf_token }}";
+       var itemId = $(this).attr('id').split('remove_')[1];
+       var url = `/bag/remove/${itemId}/`;
+       var data = {'csrfmiddlewaretoken': csrfToken};
+   
+       $.post(url, data)
+        .done(function() {
+            location.reload();
+        });
+   })
 </script>
 {% endblock %}

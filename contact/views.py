@@ -28,7 +28,7 @@ def contact(request):
             except BadHeaderError:
                 messages.error(request, 'Invalid header found.')
                 return HttpResponse('Invalid header found.')
-            messages.success(request, 'Form successfully processed!' +
+            messages.success(request, 'Form successfully processed!'
                              ' A team member will be in touch shortly')
             return redirect(contact)
 

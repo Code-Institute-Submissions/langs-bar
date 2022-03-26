@@ -30,8 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEVELOPMENT')
 
 ALLOWED_HOSTS = ['localhost',
-                 'https://8000-techcentreuk-langsbar\
-                    -6w1guv3esdm.ws-eu34xl.gitpod.io/',
+                 'https://8000-techcentreuk-langsbar'
+                 '-6w1guv3esdm.ws-eu34xl.gitpod.io/',
                  'langs-bar-and-cocktail-lounge.herokuapp.com']
 
 
@@ -142,19 +142,19 @@ else:
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.'
-            'UserAttributeSimilarityValidator',
+                'UserAttributeSimilarityValidator',
     },
     {
         'NAME': 'django.contrib.auth.'
-            'password_validation.MinimumLengthValidator',
+                'password_validation.MinimumLengthValidator',
     },
     {
         'NAME': 'django.contrib.auth.'
-            'password_validation.CommonPasswordValidator',
+                'password_validation.CommonPasswordValidator',
     },
     {
         'NAME': 'django.contrib.auth.'
-            'password_validation.NumericPasswordValidator',
+                'password_validation.NumericPasswordValidator',
     },
 ]
 

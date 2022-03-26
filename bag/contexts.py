@@ -3,7 +3,7 @@ from events.models import Event
 
 
 def bag_contents(request):
-
+    """ Bag contents contexts.py """
     bag_items = []
     total = 0
     event_count = 0

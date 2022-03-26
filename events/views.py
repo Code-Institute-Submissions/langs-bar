@@ -121,10 +121,11 @@ def add_event(request):
             messages.success(request, 'Successfully added event!')
             return redirect(reverse('event_detail', args=[event.id]))
         else:
-            messages.error(request, 'Failed to add event. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add event. \
+                Please ensure the form is valid.')
     else:
         form = EventForm()
-        
+
     template = 'events/add_event.html'
     context = {
         'form': form,
@@ -149,7 +150,8 @@ def edit_event(request, event_id):
             messages.success(request, 'Successfully updated event!')
             return redirect(reverse('event_detail', args=[event.id]))
         else:
-            messages.error(request, 'Failed to update event. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update event. \
+                Please ensure the form is valid.')
     else:
         form = EventForm(instance=event)
         messages.info(request, f'You are editing {event.name}')

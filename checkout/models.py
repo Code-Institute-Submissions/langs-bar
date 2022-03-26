@@ -1,15 +1,13 @@
 import uuid
-
 from django.db import models
 from django.db.models import Sum
-from django.conf import settings
-
 from django_countries.fields import CountryField
 from profiles.models import UserProfile
 from events.models import Event
 
 
 class Order(models.Model):
+    """ A Model for Orders """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
@@ -62,11 +60,12 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """ A Model for Orders Line Items """
     order = models.ForeignKey(Order, null=False, blank=False,
                               on_delete=models.CASCADE,
                               related_name='lineitems')
     event = models.ForeignKey(Event, null=False, blank=False,
-                                on_delete=models.CASCADE)
+                              on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
                                          null=False, blank=False,

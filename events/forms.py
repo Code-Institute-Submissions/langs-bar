@@ -6,10 +6,13 @@ from .models import Event, Month
 class EventForm(forms.ModelForm):
     """ An admin add event form """
     class Meta:
+        """ EventForm Meta """
         model = Event
         fields = '__all__'
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(
+        label='Image', required=False, widget=CustomClearableFileInput
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

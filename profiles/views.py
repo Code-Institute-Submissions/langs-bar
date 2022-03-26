@@ -36,6 +36,7 @@ def profile(request):
 
 @login_required
 def order_history(request, order_number):
+    """ A View for Order History """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (

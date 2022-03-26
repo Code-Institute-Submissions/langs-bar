@@ -8,9 +8,11 @@ class MonthAdmin(admin.ModelAdmin):
     """ Admin Month Display Fields """
     list_display = ('name', 'friendly_name')
 
+
 class EventAdmin(admin.ModelAdmin):
     """ Admin Event Display Fields """
     list_display = ('name', 'date', 'active_expired')
+
 
 admin.site.register(Month, MonthAdmin)
 admin.site.register(Event, EventAdmin)

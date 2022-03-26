@@ -183,7 +183,7 @@ def checkout_success(request, order_number):
                 user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! '
-                     f'Your order number is {order_number}. A confirmation'
+                     f'Your order number is {order_number}. A confirmation '
                      f'email will be sent to {order.email}.')
 
     if 'bag' in request.session:

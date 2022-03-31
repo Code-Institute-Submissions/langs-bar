@@ -202,12 +202,10 @@ whitenoise==6.0.0
 
 ## Testing
 
-![Flow Chart](### VIP Booths
-![VIP Booths](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/flow-chart-2.png)
+![Flow Chart](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/flow-chart-2.png)
 - [Flow Chart](https://lucid.app/)
 
-![Lighthouse](### VIP Booths
-![VIP Booths](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/testing_results/lighthouse.png)
+![Lighthouse](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/testing_results/lighthouse.png)
 - [Google Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse)
 Lighthouse was used to ensure performance, best practices and colours didnt prevent readability. There was a few factors which doesnt allow the score to add up to 100% including no HTTPS connection with heroku.
 

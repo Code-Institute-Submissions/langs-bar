@@ -1,8 +1,8 @@
 # Langs Bar & Cocktail Lounge
 ## By Clayton File
 
-![Am I Responsive]()
-![BookingAppHomepage]()
+![Am I Responsive](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/testing_results/langs-responsive.png)
+![BookingAppHomepage](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/homepage.png)
 
 ## Table Of Contents
 1. [Intro](#intro)
@@ -91,30 +91,33 @@ The "My Profile" tab will be innaccessable without first logging in. Users will 
 The Company's current website is a bare bones structure of what they was looking for which was a mobile friendly website easy to use and check bookings and menu's.
 
 ### Homepage
-![Homepage]()
+![Homepage](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/wireframes/home-wireframe.png)
 ### About
-![About]()
+![About](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/wireframes/about-wireframe.png)
 ### Add An Event
-![Add An Event]()
+![Add An Event](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/wireframes/add-an-event-wireframe.png)
 ### Brunch
-![Brunch]()
+![Brunch](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/wireframes/brunch-wireframe.png)
 ### Cart
-![Cart]()
+![Cart](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/wireframes/cart-wireframe.png)
 ### Checkout
-![Checkout]()
+![Checkout](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/wireframes/checkout-wireframe.png)
 ### Checkout Success
-![Checkout Success]()
+![Checkout Success](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/wireframes/checkout-success-wireframe.png)
 ### Contact Us
-![Contact Us]()
+![Contact Us](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/wireframes/contact-us-wireframe.png)
 ### Evening Tables
-![Evening Tables]()
+![Evening Tables](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/wireframes/evening-tables-wireframe.png)
 ### Profile
-![Profile]()
+![Profile](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/wireframes/profile-wireframe.png)
 ### VIP Booths
-![VIP Booths]()
+![VIP Booths](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/wireframes/vip-wireframe.png)
+### Menus
+![Menus](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/wireframes/menus-wireframe.png)
 
 ### Database Design
-![Database Diagram]()
+![Database Diagram](### VIP Booths
+![VIP Booths](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/database.png)
 
 ### Security
 Using config variables in heroku, all SECRET access keys are stored safely to prevent unwanted connections to the database.
@@ -199,16 +202,18 @@ whitenoise==6.0.0
 
 ## Testing
 
-![Flow Chart]()
+![Flow Chart](### VIP Booths
+![VIP Booths](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/flow-chart-2.png)
 - [Flow Chart](https://lucid.app/)
 
-![Lighthouse]()
+![Lighthouse](### VIP Booths
+![VIP Booths](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/testing_results/lighthouse.png)
 - [Google Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse)
 Lighthouse was used to ensure performance, best practices and colours didnt prevent readability. There was a few factors which doesnt allow the score to add up to 100% including no HTTPS connection with heroku.
 
 Another important piece of testing was to ensure only admin users can add, edit or delete events using if statements to restrict any user without super user access cannot manually search web address.
 
-- [Event Details False Error]()
+- [Event Details False Error](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/testing_results/false-error-event-detail.png)
 The html validator shows a false error saying max value cannot be a empty string but in fact this is not the case.
 ```
 <input readonly class="form-control qty_input text-dark" type="number"
@@ -277,20 +282,20 @@ def add_event(request):
 
 ### HTML validator
 HTML Validator was used to ensure best practices. I viewed the page source and copy and pasted into the HTML validator to confirm this.
-![HTML Validator]()
+![HTML Validator](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/testing_results/html-validator.png)
 [HTML Validator](https://validator.w3.org/#validate_by_input)
 
 ### CSS Validator
 CSS Validator was used, by copying and pasting css into W3C CSS Validator / Jigsaw.
-![CSS Validator]()
+![CSS Validator](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/testing_results/css-validator.png)
 [CSS Validator](https://jigsaw.w3.org/css-validator/validator)
 
 ### PEP8 validator
 [PEP8 Online](http://pep8online.com/) was used to check if python was pep8 compliant.
-![PEP8]()
+![PEP8](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/testing_results/pep8.png)
 
 [Am I Responsive](http://ami.responsivedesign.is/)
-![Am I Responsive]()
+![Am I Responsive](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/testing_results/langs-responsive.png)
 Responsiveness was tested manually using google chrome development tools, my iPhone 13 pro max AND using Am i Responsive as per the above screenshot.
 
 ### Assumptions and Dependencies

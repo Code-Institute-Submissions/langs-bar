@@ -116,8 +116,7 @@ The Company's current website is a bare bones structure of what they was looking
 ![Menus](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/wireframes/menus-wireframe.png)
 
 ### Database Design
-![Database Diagram](### VIP Booths
-![VIP Booths](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/database.png)
+![Database Diagram](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/database.png)
 
 ### Security
 Using config variables in heroku, all SECRET access keys are stored safely to prevent unwanted connections to the database.

@@ -64,14 +64,12 @@ nav {
     padding: 3px;
 }
 /* ------------------------------- bootstrap toasts */
-
 .message-container {
     position: fixed;
     top: 72px;
     right: 15px;
     z-index: 99999999999;
 }
-
 .custom-toast {
     overflow: visible;
 }
@@ -79,7 +77,6 @@ nav {
 .toast-capper {
     height: 2px;
 }
-
 /* -------------------------------- Footer */
 .footer {
     position: relative;
@@ -162,7 +159,6 @@ input[type=number]::-webkit-outer-spin-button {
 .bag-table {
     border-bottom: 1px solid white;
 }
-
 /* -------------------------------- Menus */
 .slider-div {
     margin-left: auto;
@@ -205,7 +201,7 @@ input[type=number]::-webkit-outer-spin-button {
     touch-action: pan-y pinch-zoom;
 }
 /* -------------------------------- About */
-#langs-front {
+.langs-front {
     max-width: 80%;
 }
 /* -------------------------------- Contact */
@@ -237,19 +233,19 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .vip-edit {
         display: none;
-   }
+    }
     .responsive-menu {
         max-width: 80%;
         height: auto;
         margin: auto;
-   }
+    }
     .slider-div {
         margin-top: 100px;
-   }
-   .table-responsive{
+    }
+    .table-responsive{
        font-size: smaller;
-   }
-   .spoiler-btn {
+    }
+    .spoiler-btn {
         width: 200px;
     }
     .text-size {
@@ -270,38 +266,35 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .footer {
         font-size: 1em;
-   }
+    }
     .vip-edit {
         display: contents;
-   }
+    }
     .img-vip {
         margin: auto;
-   }
+    }
     .responsive-menu {
         max-width: 500px;
-   }
+    }
     .slider-div {
         margin-top: 0;
-   }
-   .spoiler-btn {
+    }
+    .spoiler-btn {
         width: 400px;
     }
     .text-size {
         font-size: 1rem;
     }
 }
-@media (min-width: 991px) {
-
-}
 @media (min-width: 1080px) {
     .vip-text {
         width: 75%;
         text-align: center;
         margin: auto;
-   }
+    }
     .text-top {
         margin-top: 50px;
-   }
+    }
 }
 @media (max-width: 400px) {
     .hide-s {

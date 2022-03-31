@@ -6,20 +6,21 @@
 <!-- Menu Page -->
 <!-- Menu Carousel -->
 <div id="carouselExampleControls" class="carousel slide mt-5" data-ride="carousel" data-interval="10000">
-<div class="carousel-inner slider-div">
-   {% for menu in menus %}
-   <div class="carousel-item item{% if forloop.first %} active{% endif %}" data-interval="10000">
-      <img class="d-block responsive-menu" src="https://res.cloudinary.com/dlqh66keo/image/upload/v1647212522/{{ menu.image }}" alt="First slide">
+   <div class="carousel-inner slider-div">
+      {% for menu in menus %}
+      <div class="carousel-item item{% if forloop.first %} active{% endif %}" data-interval="10000">
+         <img class="d-block responsive-menu" src="https://res.cloudinary.com/dlqh66keo/image/upload/v1647212522/{{ menu.image }}" alt="First slide">
+      </div>
+      {% endfor %}
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+      </a>
    </div>
-   {% endfor %}
-   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-   <span class="sr-only">Previous</span>
-   </a>
-   <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-   <span class="carousel-control-next-icon" aria-hidden="true"></span>
-   <span class="sr-only">Next</span>
-   </a>
 </div>
 <!-- Menu Info -->
 <div class="container info-menu">

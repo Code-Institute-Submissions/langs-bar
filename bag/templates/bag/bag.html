@@ -34,7 +34,7 @@
                <tr class="bag-table">
                   <td class="p-3 w-25 hide-s">
                      {% if item.event.image %}
-                     <img class="img-fluid rounded" src="{{ item.event.image.url }}">
+                     <img class="img-fluid rounded" alt="{{ item.event.name }}" src="{{ item.event.image.url }}">
                      {% else %}
                      <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.event.name }}">
                      {% endif %}
@@ -124,7 +124,7 @@
 {{ block.super }}
 <!-- Quantity Input Script -->
 {% include 'events/includes/quantity_input_script_bag.html' %}
-<script type="text/javascript">
+<script>
    // Update quantity on click
    $('.update-link').click(function(e) {
        var form = $(this).prev('.update-form');

@@ -24,7 +24,7 @@ def all_events(request):
                 sortkey = 'lower_name'
                 events = events.annotate(lower_name=Lower("name"))
             if sortkey == 'month':
-                sortkey = 'month__name'
+                sortkey = 'date'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == "desc":

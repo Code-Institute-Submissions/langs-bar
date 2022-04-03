@@ -166,6 +166,20 @@ def edit_event(request, event_id):
 
 
 @login_required
+def confirm_delete(request, event_id):
+    """ A Delete Event Confirmation View """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    event = get_object_or_404(Event, pk=event_id)
+    context = {
+        'event': event,
+    }
+    return render(request, 'events/confirm_delete.html', context)
+
+
+@login_required
 def delete_event(request, event_id):
     """ Delete a event from the store """
 

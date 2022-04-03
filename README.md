@@ -56,6 +56,11 @@ Using Github "Issues" and "Projects" User stories are created to get a basic und
 * Mobile and desktop navigations.
 * Purchase event entries and vip booths.
 * Manage, Edit and Delete events and vip booths.
+* A Facebook page to advertise the business and accept "Messenger" for form of contact.
+
+## Facebook
+![Langs Facebook](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/langs-facebook.png)
+I Created a company facebook page (see screenshot above) to demonstrate the capability but have unpublished this page due to the company already having an existing page for production which can be found at: [Here](https://www.facebook.com/LangsBarSittingbourne)
 
 ## Structure
 - User Story:
@@ -197,7 +202,7 @@ whitenoise==6.0.0
 
 ## Bugs & Fixes
 
-- 
+- Not so much a bug or fix but future implementation of more payment providers and physical products could be added to improve the site.
 
 ## Testing
 

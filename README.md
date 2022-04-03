@@ -31,6 +31,7 @@ A Heroku based E-Commerce Website for a Bar and Cocktail Lounge in Sittingbourne
 
 ### User Stories
 Using Github "Issues" and "Projects" User stories are created to get a basic understanding of different users needs.
+![User Stories](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/user-stories.png)
 
 - Customers / Site Users
 * As a User, I am able to access the site on my mobile, tablet and desktop which is adapted to provide the best experience.

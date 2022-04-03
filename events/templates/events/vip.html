@@ -52,6 +52,8 @@
                         </thead>
                         {% for event in events %}
                         {% if event.booth_size %}
+                        <!-- Show only active events -->
+                        {% if event.active_expired == 'active' %}
                         <tr class="bag-table">
                            <td class="p-3">
                               <a href="{% url 'vip_detail' event.id %}" class="text-white">
@@ -71,6 +73,7 @@
                               <a href="{% url 'vip_detail' event.id %}"><button class="text-dark">Details</button></a>
                            </td>
                         </tr>
+                        {% endif %}
                         {% endif %}
                         {% endfor %}
                      </table>

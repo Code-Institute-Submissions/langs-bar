@@ -14,6 +14,10 @@ class EventForm(forms.ModelForm):
         label='Image', required=False, widget=CustomClearableFileInput
     )
 
+    date = forms.DateField(
+        widget=forms.widgets.DateInput(attrs={'type': 'date'})
+    )
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         months = Month.objects.all()

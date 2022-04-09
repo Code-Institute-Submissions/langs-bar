@@ -10,8 +10,8 @@
       <div class="col text-center mt-3">
          <h2 class="logo-font">VIP Booths</h2>
          {% for c in current_months %}
-         <a class="category-badge text-decoration-none"href="{% url 'vip' %}?month={( c.name }}">
-         <span class="p-2 badge badge-white text-white rounded-0 border border-dark">{{ c.friendly_name }}</span>
+         <a class="category-badge text-decoration-none" href="{% url 'vip' %}?month={( c.name }}">
+            <span class="p-2 badge badge-white text-white rounded-0 border border-dark">{{ c.friendly_name }}</span>
          </a>
          {% endfor %}
       </div>
@@ -21,15 +21,22 @@
       <div class="col-10 offset-1">
          <div class="row mt-1 mb-2">
             <div class="col-12 col-md-6 order-md-last">
+               <!-- Sort Selector -->
                <div class="sort-select-wrapper event-sort-selector float-right text-dark">
-                  <select id="sort-selector" class="sort-selectors text-dark" name="custom-select custom-select-sm rounded-0 border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                  <option value="month_asc" {% if current_sorting == "month_asc"%}selected{% endif %}>Month (Sooner to Later)</option>
-                  <option value="month_desc" {% if current_sorting == "month_desc"%}selected{% endif %}>Month (Later to Sooner)</option>
+                  <select id="sort-selector" class="sort-selectors text-dark"
+                     name="custom-select custom-select-sm rounded-0 border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                     <!-- Sort Selector Ascending -->
+                     <option value="month_asc" {% if current_sorting == "month_asc"%}selected{% endif %}>Month (Sooner
+                        to Later)</option>
+                     <!-- Sort Selector Descending -->
+                     <option value="month_desc" {% if current_sorting == "month_desc"%}selected{% endif %}>Month (Later
+                        to Sooner)</option>
                   </select>
                </div>
             </div>
             <div class="col-12 col-md-6 order-md-first">
                <p class="text-muted mt-3 text-center text-md-left">
+                  <!-- Sort Selector Default -->
                   {% if current_months or current_sorting != 'None_None' %}
                   <span class="small events-home"><a href="{% url 'vip' %}">Booths Home ~</a></span>
                   {% endif %}
@@ -37,10 +44,12 @@
             </div>
          </div>
          <div class="row">
+            <!-- VIP Booths Table -->
             <div class="row m-auto booth-table">
                <div class="col">
                   <div class="table-responsive rounded">
                      <table class="table table-sm table-borderless">
+                        <!-- Table Head -->
                         <thead class="text-white">
                            <tr>
                               <th class="pb-3" scope="col">Date</th>
@@ -51,24 +60,30 @@
                            </tr>
                         </thead>
                         {% for event in events %}
+                        <!-- Filter ONLY VIP Booths From Events -->
                         {% if event.booth_size %}
                         <!-- Show only active events -->
                         {% if event.active_expired == 'active' %}
                         <tr class="bag-table">
                            <td class="p-3">
+                              <!-- Event Date -->
                               <a href="{% url 'vip_detail' event.id %}" class="text-white">
-                              {{ event.date }}
+                                 {{ event.date }}
                               </a>
                            </td>
+                           <!-- Event Booth Size -->
                            <td class="py-3">
                               <p class="my-0 text-white booth-size"><strong>{{ event.booth_size }}</strong></p>
                            </td>
+                           <!-- Event Quantity -->
                            <td class="py-3 table-hide">
                               <p class="my-0 text-white"><strong>{{ event.quantity }}</strong></p>
                            </td>
+                           <!-- Event Price -->
                            <td class="py-3 table-hide">
                               <p class="my-0 text-white">£{{ event.price }}</p>
                            </td>
+                           <!-- Event Details / View Event -->
                            <td class="py-3 table-hide">
                               <a href="{% url 'vip_detail' event.id %}"><button class="text-dark">Details</button></a>
                            </td>
@@ -87,27 +102,26 @@
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}
+<!-- Sort Selector JS -->
 <script>
-   $('#sort-selector').change(function() {
+   $('#sort-selector').change(function () {
       var selector = $(this);
       var currentUrl = new URL(window.location);
-   
+
       var selectedVal = selector.val();
       if (selectedVal != "reset") {
          var sort = selectedVal.split("_")[0];
          var direction = selectedVal.split("_")[1];
-   
+
          currentUrl.searchParams.set("sort", sort);
          currentUrl.searchParams.set("direction", direction);
-   
+
          window.location.replace(currentUrl);
-     }
-      else {
+      } else {
          currentUrl.searchParams.delete("sort");
          currentUrl.searchParams.delete("direction");
-   
-     }
+
+      }
    })
-   
 </script>
 {% endblock %}

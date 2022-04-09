@@ -9,23 +9,27 @@
    <div class="row">
       <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
          <div class="image-container my-5">
+            <!-- Event Image -->
             {% if event.image %}
             <a href="{{ event.image.url }}" target="_blank">
             <img class="card-img-top img-fluid" src="{{ event.image.url }}" alt="{{ event.name }}">
             </a>
             {% else %}
-            <a href="">
+            <!-- If No Image, Display noimage.png -->
             <img class="card-img-top img-fluid" src="https://res.cloudinary.com/dlqh66keo/image/upload/v1647210739/Langs/images/noimage.png" alt="{{ event.name }}">
-            </a>
             {% endif %}
          </div>
       </div>
       <!-- Main Content Row -->
       <div class="col-12 col-md-6 col-lg-4">
          <div class="product-details-container mb-5 mt-md-5">
+            <!-- Event Name -->
             <p class="mb-0">{{ event.name }}</p>
+            <!-- Event Date -->
             <p>{{ event.date }}</p>
+            <!-- Event Price -->
             <p class="lead mb-0 text-left font-weight-bold">£{{ event.price }} Per Person</p>
+            <!-- Event Month -->
             {% if event.month %}
             <p class="small mt-1 mb-0 text-white">
                <a class="text-white" href="{% url 'events' %}?category={{ event.month.name }}">
@@ -33,19 +37,24 @@
                </a>
             </p>
             {% endif %}
+            <!-- Event Description -->
             <p class="mt-3">{{ event.description }}</p>
+            <!-- Form To Add Event To Bag -->
             <form class="form" action="{% url 'add_to_bag' event.id %}" method="POST">
                {% csrf_token %}
                <div class="form-row">
+                  <!-- If Event Quantity Is 0 -->
                   {% if event.quantity == 0 %}
                   <h5>OUT OF STOCK</h5>
                   {% else %}
+                  <!-- If Event Quantity Is Less Than Or Equal To 5 -->
                   {% if event.quantity <= 5 %}
                   <div class="col-12 quantity-div pl-0">
                      <p class="mt-3"><strong>Quantity:</strong></p>
                      <div class="form-group w-50">
                         <div class="input-group">
                            <div class="input-group-prepend">
+                              <!-- Decrement Quantity Input Selector -->
                               <button class="decrement-qty btn btn-black rounded-0" 
                                  data-item_id="{{ event.id }}" id="decrement-qty_{{ event.id }}">
                               <span class="icon">
@@ -53,11 +62,13 @@
                               </span>
                               </button>
                            </div>
+                           <!-- Quantity Input Selector -->
                            <input readonly class="form-control qty_input text-dark" type="number"
                               name="quantity" value="1" min="1" max="{{ item.event.quantity }}"
                               data-item_id="{{ event.id }}"
                               id="id_qty_{{ event.id }}">
                            <div class="input-group-append">
+                              <!-- Increment Quantity Input Selector -->
                               <button class="increment-qty btn btn-black rounded-0"
                                  data-item_id="{{ event.id }}" id="increment-qty_{{ event.id }}">
                               <span class="icon">
@@ -69,15 +80,18 @@
                      </div>
                   </div>
                   <div class="col-12">
+                     <!-- Show Remaining Stock -->
                      <p>Only {{ event.quantity }} Remaining.</p>
                   </div>
                   <input type="submit" class="btn btn-black text-white border-white rounded-0 text-uppercase btn-invert" value="Add to Cart">
                   {% else %}
+                  <!-- If Quantity Is More Than 5 -->
                   <div class="col-12">
                      <p class="mt-3"><strong>Quantity:</strong></p>
                      <div class="form-group w-50">
                         <div class="input-group">
                            <div class="input-group-prepend">
+                              <!-- Decrement Quantity Input Selector -->
                               <button class="decrement-qty btn btn-black rounded-0" 
                                  data-item_id="{{ event.id }}" id="decrement-qty_{{ event.id }}">
                               <span class="icon">
@@ -85,11 +99,13 @@
                               </span>
                               </button>
                            </div>
+                           <!-- Quantity Input Selector -->
                            <input readonly class="form-control qty_input text-dark" type="number"
                               name="quantity" value="1" min="1" max="{{ event.quantity }}"
                               data-item_id="{{ event.id }}"
                               id="id_qty_{{ event.id }}">
                            <div class="input-group-append">
+                              <!-- Increment Quantity Input Selector -->
                               <button class="increment-qty btn btn-black rounded-0"
                                  data-item_id="{{ event.id }}" id="increment-qty_{{ event.id }}">
                               <span class="icon">
@@ -100,18 +116,21 @@
                         </div>
                      </div>
                   </div>
+                  <!-- Add To Bag Button -->
                   <input type="submit" class="btn btn-black text-white border-white rounded-0 text-uppercase mt-5" value="Add to Cart">
                   {% endif %}
                   {% endif %}
                </div>
                <div class="col-12">
                   <p class="mt-3 mb-0">
+                     <!-- If Superuser/Admin Then Show Edit & Delete Buttons -->
                      {% if request.user.is_superuser %}
                      <a class="text-center text-primary" href="{% url 'edit_event' event.id %}">Edit</a> | 
                      <a class="text-danger text-center" href="{% url 'confirm_delete' event.id %}">Delete</a>
                      {% endif %}
                   </p>
                </div>
+               <!-- Back To All Events -->
                <div class="col-12 mt-2 pl-0">
                   <a href="{% url 'events' %}" class="btn btn-outline-white text-white rounded-0 mt-5">
                   <span class="icon">
@@ -129,5 +148,6 @@
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}
+<!-- Include Quantity Input Script -->
 {% include 'events/includes/quantity_input_script.html' %}
 {% endblock %}

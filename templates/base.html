@@ -1,91 +1,116 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-   <!-- Head -->
-   <head>
-      <!-- Meta -->    
-      {% block meta %}
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="title" content="Langs Bar & Cocktail Lounge">
-      <meta name="description" content="Cocktail Bar & Club in the heart of Sittingbourne. Serving the best freshly made cocktails with premium spirits!">
-      <meta name="keywords" content="Cocktail Bar Sittingbourne, Cocktail Sittingbourne, Bottomless Brunch, Tribute Act, Cocktail Tree, Sittingbourne Night Out, Sittingbourne Bar, Sittingbourne Club, Sittingbourne Shisha, Sittingbourne Karaoke, Sittingbourne Over 21, Sittingbourne Comedy Night, Things To Do In Sittingbourne, Beer Garden Sittingbourne, Sittingbourne Live Music, ">
-      <meta name="theme-color" content="#030509">
-      <meta name="author" content="Full Snack Web Dev">
-      {% endblock %}
-      {% block extra_meta %}
-      {% endblock %}
-      <!-- Styling / CSS -->
-      {% block corecss %}
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="{% static 'css/base.css' %}">
-      <!-- favicons -->
-      <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
-      <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-      <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
-      {% endblock %}
-      {% block extra_css %}
-      {% endblock %}
-      <!-- JS Scripts -->
-      {% block corejs %}
-      <script src="https://kit.fontawesome.com/4863a75fd6.js" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-      <!-- Stripe -->
-      <script src="https://js.stripe.com/v3/"></script>
-      {% endblock %}
-      {% block extra_js %}
-      {% endblock %}
-      <!-- Site Title -->
-      <title>Langs Bar {% block extra_title %}{% endblock %}</title>
-   </head>
-   <body>
-      <!-- Header -->
-      <header class="">
-         {% include 'includes/main-nav.html' %}
-      </header>
-      <!-- Messages -->
-      {% if messages %}
-      <div class="message-container">
-         {% for message in messages %}
-         {% with message.level as level %}
-         {% if level == 40 %}
-         {% include 'includes/toasts/toast_error.html' %}
-         {% elif level == 30 %}
-         {% include 'includes/toasts/toast_warning.html' %}
-         {% elif level == 25 %}
-         {% include 'includes/toasts/toast_success.html' %}
-         {% else %}
-         {% include 'includes/toasts/toast_info.html' %}
-         {% endif %}
-         {% endwith %}
-         {% endfor %}
-      </div>
+<!-- Head -->
+
+<head>
+   <!-- Meta -->
+   {% block meta %}
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="title" content="Langs Bar & Cocktail Lounge">
+   <meta name="description"
+      content="Cocktail Bar & Club in the heart of Sittingbourne. Serving the best freshly made cocktails with premium spirits!">
+   <meta name="keywords"
+      content="Cocktail Bar Sittingbourne, Cocktail Sittingbourne, Bottomless Brunch, Tribute Act, Cocktail Tree, Sittingbourne Night Out, Sittingbourne Bar, Sittingbourne Club, Sittingbourne Shisha, Sittingbourne Karaoke, Sittingbourne Over 21, Sittingbourne Comedy Night, Things To Do In Sittingbourne, Beer Garden Sittingbourne, Sittingbourne Live Music, ">
+   <meta name="theme-color" content="#030509">
+   <meta name="author" content="Full Snack Web Dev">
+   {% endblock %}
+   {% block extra_meta %}
+   {% endblock %}
+   <!-- Styling / CSS -->
+   {% block corecss %}
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+   <!-- Site CSS -->
+   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+   <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+   {% endblock %}
+   {% block extra_css %}
+   {% endblock %}
+   <!-- JS Scripts -->
+   {% block corejs %}
+   <!-- FontAwesome -->
+   <script src="https://kit.fontawesome.com/4863a75fd6.js" crossorigin="anonymous"></script>
+   <!-- Jquery Library -->
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   <!-- JSdelivr -->
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+   </script>
+   <!-- Bootstrap Library -->
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+   </script>
+   <!-- Stripe -->
+   <script src="https://js.stripe.com/v3/"></script>
+   {% endblock %}
+   {% block extra_js %}
+   {% endblock %}
+   <!-- Site Title -->
+   <title>Langs Bar {% block extra_title %}{% endblock %}</title>
+</head>
+
+<body>
+   <!-- Header -->
+   <header>
+      {% include 'includes/main-nav.html' %}
+   </header>
+   <!-- Messages -->
+   {% if messages %}
+   <div class="message-container">
+      {% for message in messages %}
+      {% with message.level as level %}
+      <!-- Error Toast -->
+      {% if level == 40 %}
+      {% include 'includes/toasts/toast_error.html' %}
+      <!-- Warning Toast -->
+      {% elif level == 30 %}
+      {% include 'includes/toasts/toast_warning.html' %}
+      <!-- Success Toast -->
+      {% elif level == 25 %}
+      {% include 'includes/toasts/toast_success.html' %}
+      {% else %}
+      <!-- Info Toast -->
+      {% include 'includes/toasts/toast_info.html' %}
       {% endif %}
-      {% block page_header %}
-      {% endblock %}
-      {% block content %}
-      {% endblock %}
-      {% block postloadjs %}
-      <script>
-         $('.toast').toast('show');
-      </script>
-      <!-- Mailchimp Pop Up -->
-      <script id="mcjs">
-         ! function (c, h, i, m, p) {
-           m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
-         }
-         (document, "script", "https://chimpstatic.com/mcjs-connected/js/users/5707e17b3b41aba5e538696c7/5e036917e9ff5c2d35d9ebf64.js");
-      </script>
-      {% endblock %}
-      <!-- Footer -->
-      <footer class="footer">
-         <div class="footer-copyright text-center py-3">© 2022 Copyright: Langs Bar & Cocktail Lounge | Powered By: 
-            <a href="https://fullsnackwebdev.co.uk/" class="footer-link" rel=“noopener” target="_blank"> Full Snack Web Dev</a>
-         </div>
-      </footer>
-   </body>
+      {% endwith %}
+      {% endfor %}
+   </div>
+   {% endif %}
+   {% block page_header %}
+   {% endblock %}
+   {% block content %}
+   {% endblock %}
+   {% block postloadjs %}
+   <!-- Show toasts -->
+   <script>
+      $('.toast').toast('show');
+   </script>
+   <!-- Mailchimp Pop Up -->
+   <script id="mcjs">
+      ! function (c, h, i, m, p) {
+         m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m,
+            p)
+      }
+      (document, "script",
+         "https://chimpstatic.com/mcjs-connected/js/users/5707e17b3b41aba5e538696c7/5e036917e9ff5c2d35d9ebf64.js");
+   </script>
+   {% endblock %}
+   <!-- Footer -->
+   <footer class="footer">
+      <div class="footer-copyright text-center py-3">© 2022 Copyright: Langs Bar & Cocktail Lounge | Powered By:
+         <a href="https://fullsnackwebdev.co.uk/" class="footer-link" rel=“noopener” target="_blank"> Full Snack Web
+            Dev</a>
+      </div>
+   </footer>
+</body>
+
 </html>

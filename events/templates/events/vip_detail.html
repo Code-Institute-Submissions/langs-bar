@@ -7,109 +7,135 @@
 <div class="container-fluid">
    <div class="row vip-m">
       <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+         <!-- VIP Booth Image -->
          <div class="image-container my-5">
-            <a href="https://res.cloudinary.com/dlqh66keo/image/upload/v1647211016/Langs/images/langs_vip_booth_idffze.png" target="_blank">
-            <img class="card-img-top img-fluid" src="https://res.cloudinary.com/dlqh66keo/image/upload/v1647211016/Langs/images/langs_vip_booth_idffze.png" alt="Vip Booths">
+            <a href="https://res.cloudinary.com/dlqh66keo/image/upload/v1647211016/Langs/images/langs_vip_booth_idffze.png"
+               target="_blank">
+               <img class="card-img-top img-fluid"
+                  src="https://res.cloudinary.com/dlqh66keo/image/upload/v1647211016/Langs/images/langs_vip_booth_idffze.png"
+                  alt="Vip Booths">
             </a>
          </div>
       </div>
       <div class="col-12 col-md-6 col-lg-4">
          <div class="product-details-container mb-5 mt-md-5">
+            <!-- Event Date -->
             <p class="lead mb-0 font-weight-bolder">{{ event.date }}</p>
+            <!-- Event Price Per Booth -->
             <p class="mb-0 text-left">£{{ event.price }} Per Booth</p>
+            <!-- Event Month -->
             {% if event.month %}
             <p class="small mt-1 mb-0">
                <a class="text-white" href="{% url 'vip' %}?category={{ event.month.name }}">
-               <i class="fas fa-tag mr-1"></i>{{ event.month.friendly_name }}
+                  <i class="fas fa-tag mr-1"></i>{{ event.month.friendly_name }}
                </a>
             </p>
             {% endif %}
+            <!-- Event Description -->
             <p class="mt-3">{{ event.description }}</p>
+            <!-- Event Form -->
             <form class="form" action="{% url 'add_to_bag' event.id %}" method="POST">
                {% csrf_token %}
                <div class="form-row">
+                  <!-- Booth Size -->
                   <p><u>Booth Size: {{ event.booth_size }}</u></p>
+                  <!-- If Out Of Stock -->
                   {% if event.quantity == 0 %}
                   <h5>OUT OF STOCK</h5>
                   {% else %}
+                  <!-- If Quantity Available Less Than 5 -->
                   {% if event.quantity <= 5 %}
                   <div class="col-12 quantity-div pl-0">
                      <p class="mt-3"><strong>Quantity Available:</strong></p>
                      <div class="form-group w-50">
+                        <!-- Quantity Input -->
                         <div class="input-group">
                            <div class="input-group-prepend">
-                              <button class="decrement-qty btn btn-black rounded-0" 
-                                 data-item_id="{{ event.id }}" id="decrement-qty_{{ event.id }}">
-                              <span class="icon">
-                              <i class="fas fa-minus"></i>
-                              </span>
+                              <!-- Quantity Input Decrement Button -->
+                              <button class="decrement-qty btn btn-black rounded-0" data-item_id="{{ event.id }}"
+                                 id="decrement-qty_{{ event.id }}">
+                                 <span class="icon">
+                                    <i class="fas fa-minus"></i>
+                                 </span>
                               </button>
                            </div>
-                           <input readonly class="form-control text-dark qty_input" type="number"
-                              name="quantity" value="1" min="1" max="{{ item.event.quantity }}"
-                              data-item_id="{{ event.id }}"
+                           <!-- Quantity Selected -->
+                           <input readonly class="form-control text-dark qty_input" type="number" name="quantity"
+                              value="1" min="1" max="{{ item.event.quantity }}" data-item_id="{{ event.id }}"
                               id="id_qty_{{ event.id }}">
                            <div class="input-group-append">
-                              <button class="increment-qty btn btn-black rounded-0"
-                                 data-item_id="{{ event.id }}" id="increment-qty_{{ event.id }}">
-                              <span class="icon">
-                              <i class="fas fa-plus"></i>
-                              </span>
+                              <!-- Quantity Input Increment -->
+                              <button class="increment-qty btn btn-black rounded-0" data-item_id="{{ event.id }}"
+                                 id="increment-qty_{{ event.id }}">
+                                 <span class="icon">
+                                    <i class="fas fa-plus"></i>
+                                 </span>
                               </button>
                            </div>
                         </div>
                      </div>
                   </div>
+                  <!-- Show Remaining Booths -->
                   <div class="col-12">
                      <p>Only {{ event.quantity }} Remaining Booths.</p>
                   </div>
-                  <input type="submit" class="btn btn-black text-white border-white rounded-0 text-uppercase btn-invert" value="Add to Cart">
+                  <!-- Add To Cart -->
+                  <input type="submit" class="btn btn-black text-white border-white rounded-0 text-uppercase btn-invert"
+                     value="Add to Cart">
+                  <!-- If Quantity Available Is Greater Than 5 -->
                   {% else %}
                   <div class="col-12">
                      <p class="mt-3"><strong>Quantity:</strong></p>
                      <div class="form-group w-50">
+                        <!-- Quantity Input -->
                         <div class="input-group">
                            <div class="input-group-prepend">
-                              <button class="decrement-qty btn btn-black rounded-0" 
-                                 data-item_id="{{ event.id }}" id="decrement-qty_{{ event.id }}">
-                              <span class="icon">
-                              <i class="fas fa-minus"></i>
-                              </span>
+                              <!-- Quantity Input Decrement -->
+                              <button class="decrement-qty btn btn-black rounded-0" data-item_id="{{ event.id }}"
+                                 id="decrement-qty_{{ event.id }}">
+                                 <span class="icon">
+                                    <i class="fas fa-minus"></i>
+                                 </span>
                               </button>
                            </div>
-                           <input readonly class="form-control text-dark qty_input" type="number"
-                              name="quantity" value="1" min="1" max="{{ event.quantity }}"
-                              data-item_id="{{ event.id }}"
+                           <!-- Quantity Selected -->
+                           <input readonly class="form-control text-dark qty_input" type="number" name="quantity"
+                              value="1" min="1" max="{{ event.quantity }}" data-item_id="{{ event.id }}"
                               id="id_qty_{{ event.id }}">
                            <div class="input-group-append">
-                              <button class="increment-qty btn btn-black rounded-0"
-                                 data-item_id="{{ event.id }}" id="increment-qty_{{ event.id }}">
-                              <span class="icon">
-                              <i class="fas fa-plus"></i>
-                              </span>
+                              <!-- Quantity Input Increment -->
+                              <button class="increment-qty btn btn-black rounded-0" data-item_id="{{ event.id }}"
+                                 id="increment-qty_{{ event.id }}">
+                                 <span class="icon">
+                                    <i class="fas fa-plus"></i>
+                                 </span>
                               </button>
                            </div>
                         </div>
                      </div>
                   </div>
-                  <input type="submit" class="btn btn-black text-white border-white rounded-0 text-uppercase mt-5" value="Add to Cart">
+                  <!-- Add To Cart -->
+                  <input type="submit" class="btn btn-black text-white border-white rounded-0 text-uppercase mt-5"
+                     value="Add to Cart">
                   {% endif %}
                   {% endif %}
                </div>
                <div class="col-12">
                   <p class="mt-3 mb-0">
+                     <!-- SuperUser Edit / Delete Buttons -->
                      {% if request.user.is_superuser %}
-                     <a class="text-center text-primary" href="{% url 'edit_event' event.id %}">Edit</a> | 
+                     <a class="text-center text-primary" href="{% url 'edit_event' event.id %}">Edit</a> |
                      <a class="text-danger text-center" href="{% url 'confirm_delete' event.id %}">Delete</a>
                      {% endif %}
                   </p>
                </div>
+               <!-- Back To VIP Booths Page -->
                <div class="col-12 mt-2 pl-0">
                   <a href="{% url 'vip' %}" class="btn btn-outline-white text-white rounded-0 mt-5">
-                  <span class="icon">
-                  <i class="fas fa-chevron-left"></i>
-                  </span>
-                  <span class="text-uppercase">Back to VIP Booths</span>
+                     <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                     </span>
+                     <span class="text-uppercase">Back to VIP Booths</span>
                   </a>
                   <input type="hidden" name="redirect_url" value="{{ request.path }}">
                </div>
@@ -121,5 +147,6 @@
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}
+<!-- Include Quantity Script -->
 {% include 'events/includes/quantity_input_script.html' %}
 {% endblock %}

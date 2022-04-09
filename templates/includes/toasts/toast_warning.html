@@ -1,14 +1,17 @@
 <!-- Warning Toast -->
 <div class="toast custom-toast rounded-0 border-top-0" data-autohide="false">
-    <div class="arrow-up arrow-warning"></div>
-    <div class="w-100 toast-capper bg-warning"></div>
-    <div class="toast-header bg-white text-dark">
-       <strong class="mr-auto text-dark">Warning! </strong>
-       <button type="button" class="ml-2 mb-1 close text-dark" data-dismiss="toast" aria-label="Close">
-       <span class="text-dark" aria-hidden="true">&times;</span>
-       </button>
-    </div>
-    <div class="toast-body text-dark bg-white">
-       {{ message }}
-    </div>
- </div>
+   <div class="arrow-up arrow-warning"></div>
+   <div class="w-100 toast-capper bg-warning"></div>
+   <div class="toast-header bg-white text-dark">
+      <!-- Display Warning -->
+      <strong class="mr-auto text-dark">Warning! </strong>
+      <!-- Close Button -->
+      <button type="button" class="ml-2 mb-1 close text-dark" data-dismiss="toast" aria-label="Close">
+         <span class="text-dark" aria-hidden="true">&times;</span>
+      </button>
+   </div>
+   <div class="toast-body text-dark bg-white">
+      <!-- Display Message -->
+      {{ message }}
+   </div>
+</div>

@@ -16,6 +16,7 @@
    <!-- Main Content Row -->
    <div class="row">
       <div class="col-12 col-md-6">
+         <!-- Add Event Front End Form -->
          <form method="POST" action="{% url 'add_event' %}" class="form mb-2" enctype="multipart/form-data">
             {% csrf_token %}
             {% for field in form %}
@@ -26,11 +27,14 @@
             {% endif %}
             {% endfor %}
             <div class="text-right">
+               <!-- Cancel & Return To Events -->
                <a class="btn border-white rounded-0 text-white" href="{% url 'events' %}">Cancel</a>
+               <!-- Confirm Add Event -->
                <button class="btn border-white rounded-0 text-white" type="submit">Add Event</button>
             </div>
          </form>
       </div>
+      <!-- Instructions Div -->
       <div class="col-12 col-md-6">
          <hr>
          <h3>Instructions</h3>
@@ -50,10 +54,11 @@
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}
+<!-- Script for Image display on form -->
 <script>
-   $('#new-image').change(function() {
-       var file = $('#new-image')[0].files[0];
-       $('#filename').text(`Image will be set to: ${file.name}`);
+   $('#new-image').change(function () {
+      var file = $('#new-image')[0].files[0];
+      $('#filename').text(`Image will be set to: ${file.name}`);
    });
 </script>
 {% endblock %}

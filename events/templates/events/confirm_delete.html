@@ -14,8 +14,11 @@
     <!-- Main Content -->
     <div class="row m-0">
         <div class="col-10 offset-1 mt-5">
+            <!-- Delete Event Confirmation Prompt -->
             <h1>Are you sure you want to delete {{ event.name }}?</h1><br>
+            <!-- Confirm Delete Event Button -->
             <a href="{% url 'delete_event' event.id %}"><div class="btn btn-danger">Delete</div></a>
+            <!-- Cancel & Return To Events -->
             <a href="{% url 'events' %}"><div class="btn btn-primary">Cancel</div></a>
         </div>
     </div>

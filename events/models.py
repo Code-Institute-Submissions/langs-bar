@@ -4,7 +4,11 @@ from django.db import models
 
 
 class Month(models.Model):
-    """ A Model for months category """
+    """
+    A Model for months category
+    so events can be organised
+    by month.
+    """
 
     class Meta:
         """ Verbose name for admin """
@@ -28,7 +32,11 @@ ACTIVE_EXPIRED = [
 
 
 class Event(models.Model):
-    """ A Model for events """
+    """
+    A Model for events to be created,
+    edited, deleted and viewed both
+    front and backend
+    """
     month = models.ForeignKey(
         'Month', null=True, blank=True, on_delete=models.SET_NULL
     )

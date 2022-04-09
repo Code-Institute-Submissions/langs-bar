@@ -16,7 +16,10 @@ from .models import Order, OrderLineItem
 
 @require_POST
 def cache_checkout_data(request):
-    """ A View for cache checkout data """
+    """
+    A View for cache checkout data.
+    Populate metadata with bag and save info.
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -33,7 +36,11 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-    """ A View to checkout products  """
+    """
+    A View to checkout products and send the
+    correct information to stripe to take
+    payment and return back the status.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -156,7 +163,8 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    Handle successful checkouts.
+    Display checkout success page and message.
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)

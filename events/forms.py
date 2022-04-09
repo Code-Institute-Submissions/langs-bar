@@ -4,7 +4,11 @@ from .models import Event, Month
 
 
 class EventForm(forms.ModelForm):
-    """ An admin add event form """
+    """
+    An admin add event form to display
+    the add events form for admin to
+    create events front end.
+    """
     class Meta:
         """ EventForm Meta """
         model = Event

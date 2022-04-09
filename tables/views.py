@@ -8,7 +8,10 @@ from .forms import EveningTables
 
 
 def evening_table_form(request):
-    """ A View to submit tables form """
+    """
+    A View to submit tables booking request form
+    to allow admin to view backend.
+    """
     if request.method == 'POST':
         form = EveningTables(request.POST)
         if form.is_valid():

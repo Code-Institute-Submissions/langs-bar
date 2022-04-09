@@ -4,7 +4,10 @@ from django.db import models
 
 
 class ContactModel(models.Model):
-    """ A model to create a booking """
+    """
+    A model to allow admin to
+    view customer contact forms.
+    """
     name = models.CharField(max_length=50, null=False, blank=False)
     email = models.CharField(max_length=50, null=False, blank=False)
     phone = models.CharField(max_length=50, null=False, blank=False)

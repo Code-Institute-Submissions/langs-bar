@@ -8,7 +8,11 @@ from .forms import UserProfileForm
 
 @login_required
 def profile(request):
-    """ Display the user's profile. """
+    """
+    Display the user's profile including
+    order history and allow user to update
+    default billing information.
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -36,7 +40,11 @@ def profile(request):
 
 @login_required
 def order_history(request, order_number):
-    """ A View for Order History """
+    """
+    A View for Order History where
+    the user can view the checkout success
+    page with order information from a past order.
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (

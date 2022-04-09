@@ -3,7 +3,12 @@ from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
-    """ A Form for User Profiles """
+    """
+    A Form for User Profiles
+    to display profile data
+    including default billing
+    information and order history.
+    """
     class Meta:
         """ UserProfileForm Meta """
         model = UserProfile

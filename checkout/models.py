@@ -7,7 +7,12 @@ from events.models import Event
 
 
 class Order(models.Model):
-    """ A Model for Orders """
+    """
+    A Model to hold all
+    order information,
+    billing information
+    and stripe data.
+    """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
@@ -60,7 +65,10 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    """ A Model for Orders Line Items """
+    """
+    A Model for Orders Line Items
+    showing the order, event and quantity
+    """
     order = models.ForeignKey(Order, null=False, blank=False,
                               on_delete=models.CASCADE,
                               related_name='lineitems')

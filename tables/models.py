@@ -4,7 +4,11 @@ from django.db import models
 
 
 class TablesModel(models.Model):
-    """ A model to create a booking """
+    """
+    A model for evening table booking requests.
+    Admin can view user submitted booking
+    requests backend.
+    """
     name = models.CharField(max_length=50, null=False, blank=False)
     email = models.CharField(max_length=50, null=False, blank=False)
     phone = models.CharField(max_length=50, null=False, blank=False)

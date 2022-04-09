@@ -8,7 +8,10 @@ from .forms import ContactForm
 
 
 def contact(request):
-    """ A View to submit contact form """
+    """
+    A View to submit user contact forms
+    for admin to view backend.
+    """
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():

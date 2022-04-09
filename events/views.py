@@ -9,7 +9,11 @@ from .forms import EventForm
 
 
 def all_events(request):
-    """ A View to return the events.html """
+    """
+    A View to return the events.html
+    which displays all events to the
+    front end.
+    """
 
     events = Event.objects.all()
     months = None
@@ -49,7 +53,10 @@ def all_events(request):
 
 
 def event_detail(request, event_id):
-    """ A View to return an individual event details """
+    """
+    A View to return an individual selected
+    event details page.
+    """
     event = get_object_or_404(Event, pk=event_id)
     context = {
         'event': event
@@ -58,7 +65,11 @@ def event_detail(request, event_id):
 
 
 def all_vip(request):
-    """ A View to return the events.html """
+    """
+    A View to return the events.html
+    that displays all events which is
+    then filtered for just VIP Category.
+    """
 
     events = Event.objects.all()
     months = None
@@ -98,7 +109,10 @@ def all_vip(request):
 
 
 def vip_detail(request, event_id):
-    """ A View to return an individual event details """
+    """
+    A View to return an individual selected
+    VIP Booth details page.
+    """
     event = get_object_or_404(Event, pk=event_id)
     context = {
         'event': event
@@ -108,7 +122,11 @@ def vip_detail(request, event_id):
 
 @login_required
 def add_event(request):
-    """ Add a event to the store """
+    """
+    a View to add a event to the store
+    both front or backend, and display
+    messages if successful or not.
+    """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -136,7 +154,10 @@ def add_event(request):
 
 @login_required
 def edit_event(request, event_id):
-    """ Edit a event in the store """
+    """
+    A View to Edit a event in the store
+    both front or backend.
+    """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -167,7 +188,10 @@ def edit_event(request, event_id):
 
 @login_required
 def confirm_delete(request, event_id):
-    """ A Delete Event Confirmation View """
+    """
+    A view to display the Delete Event
+    Confirmation View before event is deleted.
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -181,7 +205,10 @@ def confirm_delete(request, event_id):
 
 @login_required
 def delete_event(request, event_id):
-    """ Delete a event from the store """
+    """
+    A View to Delete a event from the store
+    once admin has confirmed deletion.
+    """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')

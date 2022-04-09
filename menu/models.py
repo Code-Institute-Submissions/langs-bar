@@ -4,7 +4,10 @@ from django.db import models
 
 
 class MenuImages(models.Model):
-    """ A model to upload images for menus """
+    """
+    A model to upload images for menus
+    which can be displayed in a carousel.
+    """
 
     class Meta:
         """ Display name correctly in admin """

@@ -3,7 +3,11 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
-    """ A Form to display OrderForm """
+    """
+    A Form to display OrderForm
+    which the user can fill out
+    billing information.
+    """
     class Meta:
         """ OrderForm Meta """
         model = Order

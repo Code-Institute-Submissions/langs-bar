@@ -14,7 +14,11 @@ def view_bag(request):
 
 
 def add_to_bag(request, item_id):
-    """ Add a quantity of the specified event to the shopping bag """
+    """
+    Add a quantity of the specified
+    event to the shopping bag and
+    display success message.
+    """
 
     event = get_object_or_404(Event, pk=item_id)
     quantity = int(request.POST.get("quantity"))
@@ -34,7 +38,11 @@ def add_to_bag(request, item_id):
 
 
 def adjust_bag(request, item_id):
-    """Adjust the quantity of the specified event to the specified amount"""
+    """
+    Adjust the quantity of the specified
+    event to the specified amount within
+    the bag and display success message.
+    """
 
     quantity = int(request.POST.get("quantity"))
     bag = request.session.get("bag", {})
@@ -51,7 +59,10 @@ def adjust_bag(request, item_id):
 
 
 def remove_from_bag(request, item_id):
-    """Remove the item from the shopping bag"""
+    """
+    Remove the item from the shopping bag
+    and display Success Message.
+    """
 
     event = get_object_or_404(Event, pk=item_id)
 

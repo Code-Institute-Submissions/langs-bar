@@ -3,7 +3,11 @@ from .models import TablesModel
 
 
 class EveningTables(forms.ModelForm):
-    """ A Contact form """
+    """
+    A Contact form to allow the user
+    to submit an evening tables request
+    which the admin can view backend.
+    """
 
     class Meta:
         """ Tables form meta """

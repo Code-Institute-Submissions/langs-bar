@@ -3,7 +3,12 @@ from events.models import Event
 
 
 def bag_contents(request):
-    """ Bag contents contexts.py """
+    """
+    Bag contents contexts.py.
+    Get sessions bag contents and total price
+    and work out the sum based on the quantity
+    of the item in the bag.
+    """
     bag_items = []
     total = 0
     event_count = 0

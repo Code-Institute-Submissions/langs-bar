@@ -399,25 +399,25 @@ When adding, updating or removing events from the bag/cart the quantity and tota
 
 404.html and 500.html both work as expected, this was tested by typing a web address not recognised by the site for 404. For 500 a migration for contact was removed which results in the custom 500 page.
 
-All Models work correctly.
-All Forms work correctly.
-All Links lead to the correct destinations.
-Quantitys change correctly.
-Items can be removed from the bag correctly.
-Bag quantity updates correctly.
-Default billing in profile can be updated correctly.
-Menus can be added to the carousel by uploading backend.
-Uploaded images save correctly in Cloudinary.
-External links use rel="noopener" and target="blank"
-Emails working correctly.
-User profiles can be created.
-Passwords can be reset by email.
-Admin can view admin only pages, and Users cannot access these pages without superuser status.
-Events can be added both front and backend correctly.
-Site responsiveness was tested from mobile, tablet and laptop.
-Site was tested in iOS, Chrome, Safari, and google chrome browser extension for multi browser testing.
-All HTML, CSS, Javascript & Python checked and passed validators.
-All User stories have been completed and tested.
+- All Models work correctly.
+- All Forms work correctly.
+- All Links lead to the correct destinations.
+- Quantitys change correctly.
+- Items can be removed from the bag correctly.
+- Bag quantity updates correctly.
+- Default billing in profile can be updated correctly.
+- Menus can be added to the carousel by uploading backend.
+- Uploaded images save correctly in Cloudinary.
+- External links use rel="noopener" and target="blank"
+- Emails working correctly.
+- User profiles can be created.
+- Passwords can be reset by email.
+- Admin can view admin only pages, and Users cannot access these pages without superuser status.
+- Events can be added both front and backend correctly.
+- Site responsiveness was tested from mobile, tablet and laptop.
+- Site was tested in iOS, Chrome, Safari, and google chrome browser extension for multi browser testing.
+- All HTML, CSS, Javascript & Python checked and passed validators.
+- All User stories have been completed and tested.
 
 All expected results have passed during manual testing.
 

@@ -63,33 +63,135 @@ Using Github "Issues" and "Projects" User stories are created to get a basic und
 ![Langs Facebook](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/langs-facebook.png)
 I Created a company facebook page (see screenshot above) to demonstrate the capability but have unpublished this page due to the company already having an existing page for production which can be found at: [Here](https://www.facebook.com/LangsBarSittingbourne)
 
+ -------------------------------------------------------------------------------------------------------------------------------------
+
 ## Structure
-- User Story:
+## - User Story:
 ```
 As a user i can easily identify what the website is about so that i know what it has to offer.
 ```
 
-Acceptance Criteria:
-
+## Acceptance Criteria:
 Image displayed on the main page with clear inforation on the sites purpose.
 
-Implementation:
-
+## Implementation:
 The Home Page will contain the main website title of "Langs Bar & Cocktail Bar" in the image.
 The visitor will be met with the information on the general purpose of the site immediately.
 
-- User Story:
-'''
-As a Customer i can log in so that I can view my booking.
-'''
 
-Acceptance Criteria:
+## - User Story:
+```
+As a Customer, I can log in so that I can view my event and VIP booth booking.
+```
 
+## Acceptance Criteria:
 The sites page will be met with the need to login before any bookings can be seen.
 
-Implementation:
-
+## Implementation:
 The "My Profile" tab will be innaccessable without first logging in. Users will be able to click the login page from the nav menu.
+
+
+## - User Story:
+```
+As a Customer, I can reset my password by email so that I can reset it without the need to contact the admin.
+```
+## Acceptance Criteria:
+The website will send an email to the customers email address to reset password rather than posting to console which the user will not see.
+
+## Implementation:
+The website will be using an automated gmail app connection to send emails to the customers.
+
+
+## - User Story:
+```
+As a Customer, I can contact the venue via the contact form.
+```
+## Acceptance Criteria:
+The nav menu will have a link to a contact page.
+
+## Implementation:
+The contact form on the contact page will allow users to submit requests to the admin, which the admin can view from the backend.
+
+
+## - User Story:
+```
+As a User, I am able to access the site on my mobile, tablet and desktop which is adapted to provide the best experience.
+```
+## Acceptance Criteria:
+Clear responsiveness across all devices and all sizes.
+
+## Implementation:
+Responsiveness will be tested and adapted across all pages ensuring that users can use all devices from mobile, tablet and desktop.
+Bootstrap 4 will take care of alot of this and ensuring each section sits where it should be expected across all devices.
+
+
+## - User Story:
+```
+As a User, I can easily navigate through the website without too much thought so that I can find what I'm looking for quickly.
+```
+## Acceptance Criteria:
+Easy to understand navigation system.
+
+## Implementation:
+The main navigation will hold all pages the user will need with some clearly displayed within a dropdown. The homepage will be easily identifiable via a font awesome icon of a house (home). Events are clearly displayed in their own section to add to bag.
+
+
+## - User Story:
+```
+As an Admin I can Sign in backend so that I can view, edit and delete customer bookings.
+```
+## Acceptance Criteria:
+A custom model allowing admin to view, edit and delete customer submissions.
+
+## Implementation:
+A custom model allowing admin to view, edit and delete customer submissions. Clear and easy to understand form used so we can get the customers 
+information neeed to answer any enquiries.
+
+
+## - User Story:
+```
+As a Potential Customer or Existing Customer, I can easily view the venue's menu's at the venue from a mobile device or from home.
+```
+## Acceptance Criteria:
+A page to display menus on all device sizes.
+
+## Implementation:
+Using a bootstrap carousel all menus are displayed to the user front end, Admin can add more menus backend by simply uploading the image.
+
+
+## - User Story:
+```
+As an Admin I can add new bookings backend so that telephone and walk-in customers can get booked in.
+```
+## Acceptance Criteria:
+Allow Admin to manually add bookings.
+
+## Implementation:
+Using a custom model all bookings are possible to be created backend and asigned to customer details for thiose creating offline bookings or over the phone.
+
+
+## - User Story:
+```
+As an Admin I can add or remove the menu's backend so that I can ensure menus are up to date.
+```
+## Acceptance Criteria:
+Admin can manually add more menus backend.
+
+## Implementation:
+Using a custom model, Admin can upload a menu image backend which will automatically add to the menu carousel.
+
+
+## - User Story:
+```
+As an Admin I can add, edit or delete events frontend quickly and efficiently.
+```
+## Acceptance Criteria:
+Admin can create and edit events front end.
+
+## Implementation:
+Using a custom form, the Admin will be able to add or edit events front end with a nav link which only the superuser / admin role can see and access.
+
+ -------------------------------------------------------------------------------------------------------------------------------------
 
 ## Skeleton
 
@@ -124,8 +226,14 @@ The Company's current website is a bare bones structure of what they was looking
 ### Database Design
 ![Database Diagram](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/database.png)
 
+### Flow Chart
+![Flow Chart](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/flow-chart-2.png)
+- [Flow Chart](https://lucid.app/)
+
 ### Security
 Using config variables in heroku, all SECRET access keys are stored safely to prevent unwanted connections to the database.
+
+-------------------------------------------------------------------------------------------------------------------------------------
 
 ## Surface
 Typography
@@ -143,6 +251,8 @@ We maintained the same colour pallete throughout to maintain consistency and ens
 ```
 #030509
 ```
+
+-------------------------------------------------------------------------------------------------------------------------------------
 
 ## Technologies
 
@@ -203,12 +313,9 @@ whitenoise==6.0.0
 
 ## Bugs & Fixes
 
-- Not so much a bug or fix but future implementation of more payment providers and physical products could be added to improve the site.
+- Date format in production on the events cards are backwards but correct locally, With more time i would have fixed this and plan to do so in the future.
 
 ## Testing
-
-![Flow Chart](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/flow-chart-2.png)
-- [Flow Chart](https://lucid.app/)
 
 ![Lighthouse](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/testing_results/lighthouse.png)
 - [Google Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse)
@@ -216,7 +323,9 @@ Lighthouse was used to ensure performance, best practices and colours didnt prev
 
 Another important piece of testing was to ensure only admin users can add, edit or delete events using if statements to restrict any user without super user access cannot manually search web address.
 
-- [Event Details False Error](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/testing_results/false-error-event-detail.png)
+### Event Details False Error
+![Event Details False Error](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/testing_results/false-error-event-detail.png)
+
 The html validator shows a false error saying max value cannot be a empty string but in fact this is not the case.
 ```
 <input readonly class="form-control qty_input text-dark" type="number"
@@ -225,59 +334,13 @@ data-item_id="{{ event.id }}"
 id="id_qty_{{ event.id }}">
 ```
 
-## models.py
-```
-class Month(models.Model):
-    """ A Model for months category """
-
-    class Meta:
-        """ Verbose name for admin """
-        verbose_name_plural = 'Month'
-
-    name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
-
-    def __str__(self):
-        return f"{self.name}"
-
-    def get_friendly_name(self):
-        """ Get friendly / front end name """
-        return f"{self.friendly_name}"
-
-
-ACTIVE_EXPIRED = [
-    ('active', 'Active'),
-    ('expired', 'Expired'),
-]
-
-
-class Event(models.Model):
-    """ A Model for events """
-    month = models.ForeignKey(
-        'Month', null=True, blank=True, on_delete=models.SET_NULL
-    )
-    sku = models.CharField(max_length=254, null=True, blank=True)
-    name = models.CharField(max_length=254)
-    description = models.TextField()
-    date = models.CharField(max_length=254)
-    booth_size = models.CharField(max_length=254, null=True, blank=True)
-    quantity = models.IntegerField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(upload_to='images/', blank=True, null=True)
-    active_expired = models.CharField(
-        choices=ACTIVE_EXPIRED, default='active', max_length=200
-    )
-
-    def __str__(self):
-        return f"{self.name} - {self.date} - {self.active_expired}"
-```
-## views.py
+#### views.py
+To ensure users cant add, edit or delete events and it is restricted to admin only, both "@login_required" and "if not request.user.is_superuser:".
+This is to make sure 1) User is logged in and 2) The User trying to access this page is Admin / Super User.
+See Example Below:
 ```
 @login_required
 def add_event(request):
-    """ Add a event to the store """
-
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -309,6 +372,23 @@ Tester must have access to the Django Admin panel in order to manually verify th
 
 ### Regression Testing
 Features previously tested during development in a local environment must be regression tested in production on the live website.
+
+### Stripe Testing Debit / Credit Card
+You can submit a test payment (because stripe is set to test mode) using the following card details.
+
+Card Number:
+4242 4242 4242 4242
+
+Date:
+04 / 24
+
+Security:
+242
+
+Zip:
+42424
+
+-------------------------------------------------------------------------------------------------------------------------------------
 
 ## Deployment
 
@@ -352,6 +432,8 @@ Forking a repository allows you to experiment without the original project being
 5. Use the 'git clone' command in terminal followed by the copied git URL.
 
 6. A clone of the project will be created locally on your local machine.
+
+-------------------------------------------------------------------------------------------------------------------------------------
 
 ## Credits
 

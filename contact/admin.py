@@ -1,8 +1,6 @@
 from django.contrib import admin
 from .models import ContactModel
 
-# Register your models here.
-
 
 class ContactAdmin(admin.ModelAdmin):
     """ Admin Contact Form Display Fields """

@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from .models import MenuImages
 
-# Create your views here.
-
 
 def menu(request):
     """

@@ -5,9 +5,6 @@ from django.contrib import messages
 from events.models import Event
 
 
-# Create your views here.
-
-
 def view_bag(request):
     """ A View to return the bag.html """
     return render(request, "bag/bag.html")

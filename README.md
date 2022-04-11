@@ -2,7 +2,9 @@
 ## By Clayton File
 
 ![Am I Responsive](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/testing_results/langs-responsive.png)
-![BookingAppHomepage](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/homepage.png)
+![Lamgs Homepage](https://github.com/TechCentreUK/langs-bar/blob/main/readme_images/homepage.png)
+
+Live Link [Here!](https://langs-bar-and-cocktail-lounge.herokuapp.com/)
 
 ## Table Of Contents
 1. [Intro](#intro)
@@ -314,7 +316,7 @@ whitenoise==6.0.0
 ## Bugs & Fixes
 
 - Date format in production on the events cards are backwards but correct locally.
-This was fixed by using { event.date | date: "D M Y" }, we must do this because of the way postgres handles date formatting.
+This was fixed by using { event.date | date: "jS M Y" }, we must do this because of the way postgres handles date formatting.
 
 ## Testing
 

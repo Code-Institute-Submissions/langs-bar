@@ -5,8 +5,6 @@ from django.db.models.functions import Lower
 from .models import Event, Month
 from .forms import EventForm
 
-# Create your views here.
-
 
 def all_events(request):
     """

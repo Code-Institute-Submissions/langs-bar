@@ -4,8 +4,6 @@ from django.http import HttpResponse
 from django.contrib import messages
 from .forms import EveningTables
 
-# Create your views here.
-
 
 def evening_table_form(request):
     """

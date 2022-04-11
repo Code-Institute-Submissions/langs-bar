@@ -4,8 +4,6 @@ from django.http import HttpResponse
 from django.contrib import messages
 from .forms import ContactForm
 
-# Create your views here.
-
 
 def contact(request):
     """

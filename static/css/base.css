@@ -11,7 +11,7 @@ body {
     background-size: cover;
     min-height: calc(100vh);
     color: white !important;
-    font-family: 'Quicksand';
+    font-family: 'Roboto', sans-serif;
 }
 .textinput, #id_email, #id_password1, #id_password2 {
     color: black !important;
